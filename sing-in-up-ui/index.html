@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="form in">
+                <h2 class="title">Sign In</h2>
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+                <a href="#">Forgot your password?</a>
+                <button>Sign in</button>
+            </div>
+
+            <div class="form up">
+                <h2 class="title">Sign Up</h2>
+                <input type="text" placeholder="User">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+                <button>Sign Up</button>
+            </div>
+
+            <div class="content">
+                <button id="up">Sign Up</button>
+                <button id="in">Sign in</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('up').addEventListener('click', () => {
+            document.querySelector('.container').classList.add('up-mode');
+        })
+        document.getElementById('in').addEventListener('click', () => {
+            document.querySelector('.container').classList.remove('up-mode');
+        })
+    </script>
+</body>
+</html>

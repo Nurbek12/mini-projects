@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants vs Zombie | Javascript</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace, sans-serif;
+        }
+        body{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(#000a, #0001, #000a), url('./images/sun.jpg');
+            background-blend-mode: multiply;
+            background-position: center;
+            background-size: cover;
+        }
+        #game{
+            position: absolute;
+            width: 890px;
+            height: 650px;
+            background: url('./images/area.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div class="area">
+            
+        </div>
+    </div>
+    <script src="./js/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data: () => ({
+                sunPlants: [],
+                fasolPlants: [],
+            }),
+            mounted() {
+                
+            },
+        }).mount('#game')
+    </script>
+</body>
+</html>

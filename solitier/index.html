@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" id="app" v-cloak>
+        <div class="card-wrapper">
+            <div class="cart-nav">
+                <div class="card-choosee">
+                    <div class="card-outline" @click="choicecart($event)">
+                        <div class="card"  v-for="(c, i) in choicearr[0]" :key="i"  
+                        data-x="1" :data-y="i" :data-z="c.length">
+                            <img :src="'back.jpg'">   
+                        </div>
+                    </div>
+                    <div class="card-outline">
+                        <div class="card" data-x="1" :data-y="2" :data-z="choicearr[1].length-1" 
+                        @click="activethis($event, choiceincart.show)" v-show="choicearr[1].length!==0">
+                            <img :src="choicearr[1].length!==0?`carts/${choiceincart.img}`:'back.jpg'">  
+                        </div>
+                    </div>
+                </div>
+                <div class="card-complete">
+                    <div v-for="(c, i) in conmpletaarr" :key="i" 
+                    class="card-outline" @click="completethis($event)">
+                        <div class="card" data-x="2" :data-y="i" :data-z="c.length" v-show="c.length!==0">
+                            <img :src="c.length!==0?`carts/${c[c.length-1].img}`:'back.jpg'">   
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-game">
+                <div class="card-bar" v-for="(a, i) in gamearr" :key="i" @click="addfirstcart(i)">
+                    <div class="card" v-for="(b, j) in a" :key="j"
+                        @click="activethis($event, b.show)"
+                        :style="`--mt: ${j}`" data-x="3" :data-y="i" :data-z="j" :data-show="b.show">
+                        <img :src="b.show?`carts/${b.img}`:'back.jpg'">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 v-if="winnerthegame" class="title">🥳🥳You win!</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

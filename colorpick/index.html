@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Sort</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="wrapper" id="wrapper">
+            <div class="bottle" v-for="(bt, i) in gameArray" :key="i"
+            @click="BottleHandler" :data-number="i">
+                <div v-for="(b, j) in bt" :key="j" 
+                :class="`color ${colorPick(b)}`" v-if="b !== 0"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

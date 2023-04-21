@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: url('./imgs/pexels-pixabay-301378.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.wrapper{
+    width: 360px;
+    position: relative;
+    height: 360px;
+    background: url('./imgs/istockphoto-1083302826-170667a.jpg');
+    box-shadow: 0 0 25px rgb(0, 0, 0);
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+.wrapper::before{
+    position: absolute;
+    width: calc(100% - 36px);
+    height: calc(100% - 36px);
+    top: 18px;
+    left: 18px;
+    content: '';
+    box-shadow: inset 0 0 15px #000;
+    background: url('./imgs/blackstone.jpg');
+}
+.wrapper.showtext::after{
+    position: absolute;
+    content: attr(data-text);
+    width: calc(100% - 36px);
+    z-index: 6;
+    height: calc(100% - 36px);
+    top: 18px;
+    left: 18px;
+    box-shadow: inset 0 0 15px #000;
+    background: #000a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.nump{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: url('./imgs/seamless-texture-wood-old-oak-or-modern-wood-texture-free-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 5px rgb(21, 9, 7), 0 0 5px #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 3rem;
+    border-radius: 8px;
+    z-index: 3;  
+    color: rgb(83, 30, 12);
+    user-select: none;
+}
+.nump.empty{
+    opacity: 0;
+    visibility: hidden;
+}
+.gameinfo{
+    margin-bottom: 20px;
+    width: 120px;
+    height: 70px;
+    background: url('./imgs/istockphoto-1083302826-170667a.jpg');
+    border-radius: 5px;
+    box-shadow: 0 0 25px #000, inset -3px -3px 10px rgba(30, 30, 30, 0.818), inset 3px 3px 10px rgba(151, 151, 151, 0.509);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    padding-top: 15px;
+}
+.time{
+    width: 100%;
+    height: 100%;
+    background: url('./imgs/seamless-texture-wood-old-oak-or-modern-wood-texture-free-photo.jpg');
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(83, 30, 12);
+    font-size: 1.6rem;
+    font-weight: bold;
+    user-select: none;
+}

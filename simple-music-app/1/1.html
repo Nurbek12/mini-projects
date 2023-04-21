@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <span><i class="fa fa-angle-left"></i></span>
+            <h3>Music World</h3>
+            <span><i class="fa fa-bars"></i></span>
+        </div>
+        <div class="img-con">
+            <svg>
+                <circle cx="100" cy="100" r="100" id="line"></circle>
+            </svg>
+            <div id="img">
+                <div id="crc"></div>
+            </div>
+        </div>
+        <div class="title">
+            <h1 id="singer">Jhay Cortez ft. J Balvin</h1>
+            <h3 id="songname">No Me Conoce</h2>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li class="eg"><button><i class="fa fa-random"></i></button></li>
+                <li><button id="prev"><i class="fa fa-backward"></i></button></li>
+                <li><button id="play"><i class="fa fa-play"></i></button></li>
+                <li><button id="next"><i class="fa fa-forward"></i></button></li>
+                <li class="er"><button><i class="fa fa-retweet"></i></button></li>
+            </ul>
+        </div>
+        <div id="list">
+            <div class="send"></div>
+            <div class="send"></div>
+            <div class="send"></div>
+        </div>
+    </div>
+    <audio src="../music/J Balvin & Bad Bunny - No Me Conoce (Remix).mp3" id="audio"></audio>
+    <script src="3.js"></script>
+</body>
+</html>

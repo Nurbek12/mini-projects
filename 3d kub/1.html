@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="2.css">
+</head> 
+<body>
+    <div class="container">
+        <div class="card" style="--i:1; background: url(./IMG_20210113_065403_561.jpg);" ></div>
+        <div class="card" style="--i:2; background: url(./IMG_20210113_065407_815.jpg);"></div>
+        <div class="card" style="--i:3; background: url(./IMG_20210113_065412_663.jpg);"></div>
+        <div class="card" style="--i:4; background: url(./IMG_20210113_065415_990.jpg);"></div>
+        <div class="up1"></div>
+        <div class="up2"></div>
+    </div>
+    <script>
+        var a = document.querySelector('.container');
+        
+        (function(){
+            var rX=0,rY=0;
+            document.onkeydown = function(e){
+                if(e.keyCode === 37) rY -= 4
+            else if(e.keyCode === 38) rX += 4
+            else if(e.keyCode === 39) rY += 4
+            else if(e.keyCode === 40) rX -= 4
+            
+            a.style.transform = `perspective(1000px) rotateY(${rY}deg) rotateX(-${rX}deg)`
+            }
+        })();
+        document.body.addEventListener('mousemove',e=>{
+            a.style.transform = `perspective(1000px) rotateY(${e.clientX}deg) rotateX(-${e.clientY}deg)`;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* body{
+    overflow: hidden;
+} */
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-blend-mode: multiply;
+    background:url(/img/In_Love-fon.jpg);
+    background-color: #777;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(1px);
+    transition: .2s;
+    box-shadow: inset 0 0 10px 2px rgba(0,0,0,.6);
+}
+/* .neon{
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    transition: .3s;
+    background: transparent;
+    border-radius: 50%;
+    border: 15px solid #fff;
+    opacity: 3;
+    box-shadow: 5px 5px 10px 0px #382938b3,
+    6px 6px 15px 0px #f705ffb3,
+    7px 7px 20px 0px #f705ffb3,
+    8px 8px 25px 0px #f705ffb3,
+
+    inset 5px 5px 10px 0px #d1ff03ec,
+    inset 6px 6px 15px 0px #d1ff03ec,
+    inset 7px 7px 20px 0px #d1ff03ec,
+    inset 8px 8px 25px 0px #d1ff03ec,
+    
+    -5px -5px 10px 0px #d1ff03ec,
+    -6px -6px 12px 0px #d1ff03ec,
+    -7px -7px 16px 0px #d1ff03ec,
+    -8px -8px 20px 0px #d1ff03ec,
+
+    inset -5px -5px 10px 0px #f705ffb3,
+    inset -6px -6px 15px 0px #f705ffb3,
+    inset -7px -7px 20px 0px #f705ffb3,
+    inset -8px -8px 25px 0px #f705ffb3;
+    animation: sc .3s linear infinite;
+    animation-play-state: paused;
+}
+.ee.play .neon{
+    animation-play-state: running;
+}
+@keyframes sc{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+} */
+section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+@media (max-width:765px) {
+    section{
+        height: 200vh;
+    }
+    #bg{
+        height: 200vh;
+    }
+}
+.card{
+    position: relative;
+    width: 400px;
+    height: 650px;
+    border-radius: 20px;
+    background:rgba(0,0,0,.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,.4);
+    align-items: center;
+    flex-direction: column;
+    transition: .3s;
+    margin: 10px;
+}
+.card .content{
+    position: relative;
+    display: flex;
+    width: calc(100% - 20px);
+    height: 65%;
+    top: 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+    background: rgba(255,255,255,.05);
+    flex-direction: column;
+    margin: 0px;
+}
+.card .content img{
+    top: 0px;
+    position: relative;
+    width: calc(100% - 50px);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,.4);
+    filter: grayscale(.3);
+    transition: .3s;
+    opacity: 0.6;
+}
+.card.play .content img{
+    opacity: 1;
+}
+.card .content h1{
+    position: relative;
+    color: #ffffff83;
+    bottom: -10px;
+    text-shadow:1px 1px 5px rgba(255,255,255,.1);
+}
+.card:hover{
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.575);
+}
+.card .navigation{
+    position: relative;
+    width: calc(100% - 20px);
+    height: 30%;
+    bottom: -5px;
+    border-radius:0 0 15px 15px;
+    background: rgba(255,255,255,.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card .navigation .progress-container{
+    position: absolute;
+    width: 80%;
+    top: 40px;
+    height: 10px;
+    appearance: none;
+    background: rgba(0,0,0,.4);
+    color: rgba(0,0,0,.4);
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: inset 0 0 15px 2px rgba(0,0,0,.4);
+    outline: none;
+    cursor: pointer;
+}
+.card .navigation .progress-container .progress{
+    /* appearance: none; */
+    width: 0%;
+    height: 100%;
+    background: #ffffffc9;
+    cursor: pointer;
+    /* transition: width 0.1s linear; */
+    /* border: 5px solid #222; */
+    border-radius: 15px;
+    /* box-shadow: -405px 0 0 400px #ffffff42; */
+}
+.card .navigation .navg{
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: inherit;
+    bottom: -20px;
+}
+button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    outline: none;
+    background: rgba(0,0,0,.4);
+    color: #ffffff3d;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+button:hover{
+    color: #fff;
+}
+#play{
+    width: 80px;
+    font-size: 35px;
+    height: 80px;
+}
+.card .playlist{
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: rgba(255,255,255,.2);
+    border-radius: 15px;
+}
+.equ{
+    position: absolute;
+    width: 100px;
+    height:60px;
+    display: block;
+    top: 0px;
+    left: 0px;
+    transform: rotate(-90deg);
+}
+.equ .eq{
+    position: relative;
+    list-style: none;
+    width: 0px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.575);
+    margin: 3px;
+    animation: ss .5s linear infinite;
+    animation-play-state: paused;
+}
+.equ.play .eq{
+    animation-play-state: running;
+}
+@keyframes ss{
+    0%{
+        width: 0;
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        width: 50px;
+        filter: hue-rotate(360deg);
+    }
+}
+.card .playlist ul{
+    width: 100%;
+    border-radius: 15px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.card .playlist ul li{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: #00000066;
+    display: flex;
+    margin: 0px;
+    border-bottom: 2px solid #000;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s, padding 0s;
+    padding:0 10px ;
+}
+.card .playlist ul li img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: grayscale(.9);
+    margin: 0 15px;
+}
+.card .playlist ul li h2{
+    position: relative;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 1.3em;
+    color: #ffffffaa;
+    margin-left: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.349);
+}
+.card .playlist ul li:hover{
+    background: #ffffff0e;
+}

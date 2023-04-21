@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Desktop | M.E.V.N Stack Project</title>
+    <link rel="shortcut icon" href="./img/photo_2021-06-18_19-44-01.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body id="body">
+    <div class="telegram-container">
+        <div class="navigation" id="navi">
+            <div class="nav-user-info">
+                <div class="col-2">
+                    <img src="./img/IMG_20210731_142214_117.jpg">
+                    <div class="user-info">
+                        <span>Nurbek</span><br>
+                        <span>+998 90 123 45 67</span>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span class="icon-b">
+                        <i class="fa far fa-bookmark-o"></i>
+                    </span>
+                    <span class="icon" onclick="classToggl('settings','opening')">
+                        <i class="fa fa-angle-down" id="angle-dwn" onclick="classToggl('angle-dwn','open')"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="settings" id="settings">
+                <div class="accounts">
+                    <div class="account">
+                        <img src="./img/IMG_20210731_142214_117.jpg">
+                        <span>Nurbek</span>
+                    </div>
+                    <div class="add-account">
+                        <i class="fa far fas fa-user-plus"></i>
+                        <span>Добавить аккаунт</span>
+                    </div>
+                </div>
+                <div class="setting">
+                    <div class="item">
+                        <span><i class="fa fa-users"></i></span>
+                        <span>Создать группу</span>
+                    </div>
+                    <div class="item">
+                        <span><i class="fa fas fa-bullhorn"></i></span>
+                        <span>Создать канал</span>
+                    </div>
+                    <div class="item">
+                        <span><i class="fa fa-user"></i></span>
+                        <span>Контакты</span>
+                    </div>
+                    <div class="item">
+                        <span><i class="fa fas fa-phone"></i></span>
+                        <span>Звонки</span>
+                    </div>
+                    <div class="item" onclick="classToggFor2('modal-wind',false,'close','navi',false,'open')">
+                        <span><i class="fa fa-cog"></i></span>
+                        <span>Настройки</span>
+                    </div>
+                    <div class="item">
+                        <span><i class="fa fa-moon-o"></i></span>
+                        <span>Ночной режим</span>
+                        <div class="radio" onclick="classToggl('body','light')">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="#">Telegram Desktop</a><br>
+                        <a href="#">Версия 3.8.3 x64</a>-<a href="#">О программе</a>
+                    </div>
+                </div>
+            </div>
+            <div class="close-area" onclick="classTogg('navi',false,'open')"></div>
+        </div>
+        <div class="head">
+            <div class="icons">
+                <span><i class="fa fa-minus"></i></span>
+                <span><i class="fa fas fa-square-o"></i></span>
+                <span class="close"><i class="fa fa-close"></i></span>
+            </div>
+        </div>
+        <div class="users-list">
+            <div class="nav-head">
+                <div class="nav-icon" onclick="classTogg('navi',true,'open')">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Поиск">
+                </div>
+            </div>
+            <div class="users">
+                
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/20.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/0.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/17.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/31.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/32.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/42.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/57.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/60.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/60.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/60.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="img-box">
+                        <img src="./img/users/60.jpg">
+                    </div>
+                    <div class="content">
+                        <div class="username">username</div>
+                        <span class="end-mess">hello mark</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="users-up" onclick="scrollElementClear('.users', 0);">
+                <i class="fa fa-angle-up"></i>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="empty-text">Выберите, кому хотели бы написать</div>
+            <div class="chat-wrapper" style="display: flex;">
+                <div class="chat-nav">
+                    <div class="chat-info">
+                        <h3 class="chat-user-name">Nurbek</h3>
+                        <span class="chat-stauts online">в сети</span>
+                    </div>
+                    <div class="chat-icons">
+                        <i class="fa fa-search"></i>
+                        <i class="fa fa-phone"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="chat-box" id="box">
+                    <div class="chat-messages" id="mess-box">
+                        
+                    </div>
+                    <div class="chat-up-btn" onclick="scrollElementClear('.chat-box', 1);">
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+                <div class="chat-send">
+                    <div class="w">
+                        <span class="icon" onclick="SendMessage(false)">
+                            <i class="fa fas fa-paperclip"></i>
+                        </span>
+                        <input type="text" id="text-mess" placeholder="Написать сообшение...">
+                    </div>
+                    <div class="icons">
+                        <!-- <span class="icon">
+                            <i class="fa fa-bell-o"></i>
+                        </span> -->
+                        <div class="smiles" id="smiles">
+                            <div class="smile"></div>
+                        </div>
+                        <span class="icon" onclick="classToggl('smiles','open')">
+                            <i class="fa fa-smile-o"></i>
+                        </span>
+                        <span class="icon" onclick="SendMessage(true)">
+                            <i class="fa fa-microphone" id="sendingIcon"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-widnow close" id="modal-wind">
+            <div class="modal-bg" onclick="classTogg('modal-wind',true,'close')"></div>
+            <div class="modal-wrapper">
+                <div class="modal-head">
+                    <div class="modal-head-nav">
+                        <div class="title">Настройки</div>
+                        <div class="icons">
+                            <i class="fa fa-ellipsis-v"></i>
+                            <i class="fa fa-close" onclick="classTogg('modal-wind',true,'close')"></i>
+                        </div>
+                    </div>
+                    <div class="user-info-details">
+                        <div class="user-img">
+                            <img src="./img/users/17.jpg" alt="">
+                        </div>
+                        <div class="user-status">
+                            <h2>username</h2>
+                            <span>online</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-rl"></div>
+                <div class="details">
+                    <div class="detail-link">
+                        <i class="fa fas fa-info-circle"></i>
+                        <span>Изменить профиль</span>
+                    </div>
+                    <div class="detail-link">
+                        <i class="fa fas fa-bell"></i>
+                        <span>Уведомления</span>
+                    </div>
+                    <div class="detail-link">
+                        <i class="fa fas fa-comment"></i>
+                        <span>Конфиденциальность</span>
+                    </div>
+                    <div class="detail-link">
+                        <i class="fa fas fa-lock"></i>
+                        <span>Настройки чатов</span>
+                    </div>
+                    <div class="detail-link">
+                        <i class="fa fas fa-sliders"></i>
+                        <span>Провинутые настройки</span>
+                    </div>
+                    <div class="detail-link">
+                        <i class="fa fas fa-language"></i>
+                        <span>Язык</span>
+                    </div>
+                </div>
+                <div class="hr-rl"></div>
+            </div>
+        </div>
+    </div>
+    <div class="alertbox">
+        <div class="close-all" id="clear-alert" 
+            onclick="clearAlert()"
+        >Закрыт все</div>
+        <div id="alertBox">
+
+        </div>
+    </div>
+    <!-- <audio src="./sounds/telegram_desktop.mp3" controls></audio> -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

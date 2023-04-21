@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="card">
+            <ul class="s">
+                <li>Alarm</li>
+                <li class="send">Stopwatch</li>
+                <li>Timer</li>
+                <span><i class="fa fa-exchange"></i></span>
+            </ul>
+            <div class="circle">
+                <div class="timer"></div>
+                <div class="circ"></div>
+                <h1 id="time">00:00:00</h1>
+            </div>
+            <div class="control">
+                <ul>
+                    <li>
+                        <span class="delete"><i class="fa fa-close"></i></span>
+                        <span>Lap 1</span>
+                        <h4 id="txt">00:00:00</h4>
+                    </li>
+                    <li>
+                        <span class="delete"><i class="fa fa-close"></i></span>
+                        <span>Lap 2</span>
+                        <h4 id="txt">00:00:00</h4>
+                    </li>
+                </ul>
+                <div class="butn">
+                    <button id="start">Start</button>
+                    <button id="reset">Stop</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <ul class="s">
+                <li>Clock</li>
+                <li class="send">Alarm</li>
+                <li>Stopwatch</li>
+                <span><i class="fa fa-exchange"></i></span>
+            </ul>
+            <div class="circle">
+                <div class="clock">
+                    <h3 style="--x:0; --y:-55;">12</h3>
+                    <h3 style="--x:55; --y:0;">3</h3>
+                    <h3 style="--x:0; --y:55;">6</h3>
+                    <h3 style="--x:-55; --y:0;">9</h3>
+                    <div class="cc">
+                        <div id="hh"></div>
+                        <div id="mm"></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="ul">
+        
+            </ul>
+            <button id="add">ADD</button>
+        </div>
+        <div class="form">
+            <h1>Alarm Add</h1>
+            <p><input id="hr" type="number" min="1" max="12" placeholder="Hour"></p>
+            <p><input id="mn" type="number" min="1" max="60" placeholder="Minute"></p>
+            <select id="selc">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+            <select id="day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Everyday">Everyday</option>
+            </select>
+            <button id="adder">ADD</button>
+        </div>
+    </section>
+    <!-- <script src="jQuery.js"></script> -->
+    <script src="main.js"></script>
+</body>
+</html>

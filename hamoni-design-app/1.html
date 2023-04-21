@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <section>
+        <div class="card">
+            <div class="nav">
+                <div id="clock">19:44</div>
+                <ul class="icons">
+                    <li><i class="fa fa-signal"></i></li>
+                    <li><i class="fa fa-wifi"></i></li>
+                    <li><i class="fa fa-battery"></i></li>
+                </ul>
+            </div>
+            <div class="circle">
+            </div>
+            <div class="progress">
+                <ul class="menu">
+                    <li><button>Man</button></li>
+                    <li><button>Wemen</button></li>
+                    <li><button>Shemale</button></li>
+                </ul>
+                <ul class="number">
+                    <li><span>60</span></li>
+                    <li><span>50</span></li>
+                    <li><span>40</span></li>
+                    <li><span>30</span></li>
+                    <li><span>20</span></li>
+                    <li><span>10</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="nav">
+                <div id="clock1">19:44</div>
+                <ul class="icons">
+                    <li><i class="fa fa-signal"></i></li>
+                    <li><i class="fa fa-wifi"></i></li>
+                    <li><i class="fa fa-battery"></i></li>
+                </ul>
+            </div>
+            <div class="circles">
+                <div class="circ">
+                    <div class="c"></div>
+                </div>
+                <h2>
+                    6000 <br> <span>Gool</span> <br> <b>10000</b>
+                </h2>
+            </div>
+            <div class="progress">
+                <div class="b5" style="--i:1;--j:5;"></div>
+                <div class="b5" style="--i:2;--j:4;"></div>
+                <div class="b5" style="--i:3;--j:3;"></div>
+                <div class="b5" style="--i:4;--j:2;"></div>
+                <div class="b5" style="--i:5;--j:1;"></div>
+                <div class="pp p1"></div>
+                <div class="pp p2"></div>
+                <div class="pp p3"></div>
+                <div class="pp p4"></div>
+                <div class="pp p5"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="nav">
+                <div id="clock2">19:44</div>
+                <ul class="icons">
+                    <li><i class="fa fa-signal"></i></li>
+                    <li><i class="fa fa-wifi"></i></li>
+                    <li><i class="fa fa-battery"></i></li>
+                </ul>
+            </div>
+            <div class="progres">
+                <ul class="num">
+                    <li>100%</li>
+                    <li>80%</li>
+                    <li>60%</li>
+                    <li>40%</li>
+                    <li>0%</li>
+                </ul>
+                <ul class="pr">
+                    <li style="--a:48;"></li>
+                    <li style="--a:55;"></li>
+                    <li style="--a:45;"></li>
+                    <li style="--a:66;"></li>
+                    <li style="--a:65;"></li>
+                    <li style="--a:40;"></li>
+                    <li style="--a:20;"></li>
+                </ul>
+            </div>
+            <div class="progress">
+                <ul class="menu">
+                    <li><button>Today</button></li>
+                    <li><button>Week</button></li>
+                    <li><button>Month</button></li>
+                </ul>
+                <ul class="numb">
+                    <li>M</li>
+                    <li>T</li>
+                    <li>W</li>
+                    <li>T</li>
+                    <li>F</li>
+                    <li>S</li>
+                    <li>S</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        var clock = document.getElementById('clock')
+        var clock1 = document.getElementById('clock1')
+        var clock2 = document.getElementById('clock2')
+        var date = new Date()
+        var hour = date.getHours()
+        var min = date.getMinutes()
+        if(min < 10){
+            min = "0"+min
+        }
+        setInterval(()=>{
+            clock.textContent = `${hour}:${min}`
+            clock1.textContent = `${hour}:${min}`
+            clock2.textContent = `${hour}:${min}`
+        },1000)
+
+    </script>
+</body>
+</html>

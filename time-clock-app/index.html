@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-head">
+                <b id="time">
+                    9:41
+                </b>
+                <span>
+                    <i class="fa fa-signal"></i>
+                    <i class="fa fa-wifi"></i>
+                    <i class="fa fa-battery"></i>
+                </span>
+            </div>
+            <div class="clock">
+                <div class="circle cl">
+                    <div class="c"></div>
+                    <div class="h" id="h"></div>
+                    <div class="m" id="m"></div>
+                    <div class="s" id="s"></div>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-cog"></i>
+                </div>
+            </div>
+            <div class="time-list">
+                <div class="item">
+                    <h2><span>16:30</span> 
+                        <br> Sydney
+                    </h2>
+                    <h2>
+                        23:24
+                    </h2>
+                </div>
+                <div class="item">
+                    <h2><span>16:30</span> 
+                        <br> Sydney
+                    </h2>
+                    <h2>
+                        23:24
+                    </h2>
+                </div>
+                <div class="item">
+                    <h2><span>1:30</span> 
+                        <br> Sydney
+                    </h2>
+                    <h2>
+                        15:28
+                    </h2>
+                </div>
+                <div class="item">
+                    <h2><span>7:30</span> 
+                        <br> Toronto
+                    </h2>
+                    <h2>
+                        09:28
+                    </h2>
+                </div>
+            </div>
+            <div class="navig">
+                <div class="btn">
+                    <i class="fa fas fa-thermometer-empty"></i>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-sun-o"></i>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="btn active">
+                    <i class="fa fa-globe"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-head">
+                <b id="time">
+                    9:41
+                </b>
+                <span>
+                    <i class="fa fa-signal"></i>
+                    <i class="fa fa-wifi"></i>
+                    <i class="fa fa-battery"></i>
+                </span>
+            </div>
+            <div class="clock">
+                <div class="circle">
+                    <div class="ccc" id="c">
+                        <h2 id="text">00:00:00</h2>
+                    </div>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-cog"></i>
+                </div>
+            </div>
+            <div class="btns">
+                <div class="cbtn" onclick="starting()">Start</div>
+                <div class="cbtn" onclick="pauseing()">Pause</div>
+                <div class="cbtn r" onclick="reseting()">Reset</div>
+                <div class="cbtn" onclick="limiting()">Limit</div>
+            </div>
+            <div class="time-list cl" id="tmlscl">
+                <div class="nonetext">
+                    Empty
+                </div>
+            </div>
+            <div class="navig">
+                <div class="btn">
+                    <i class="fa fas fa-thermometer-empty"></i>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-sun-o"></i>
+                </div>
+                <div class="btn active">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="btn">
+                    <i class="fa fa-globe"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

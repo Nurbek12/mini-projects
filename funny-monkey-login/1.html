@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Monkey | Animation Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        section {
+            position: absolute;
+            width: 100%;
+            min-height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #efefff;
+        }
+
+        .wrapper {
+            position: absolute;
+            box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        input:not([type="checkbox"]) {
+            background-color: #f0fbfb;
+            border: 2px solid #0e353a;
+            width: 100%;
+            margin: 5px 0 20px 0;
+            padding: 12px;
+            border-radius: 3px;
+            font-size: 1.05em;
+            padding-right: 0;
+            outline: none;
+            position: relative;
+            transition: .3s;
+        }
+
+        input:focus {
+            border-color: #8da1aa;
+        }
+
+        label {
+            font-size: 0.93em;
+            font-weight: bold;
+            color: #0e353a;
+            margin: 3px 0;
+        }
+
+        .show {
+            float: right;
+            display: flex;
+            align-items: center;
+        }
+
+        .show input {
+            width: 15px;
+            /* appearance: none; */
+            height: 15px;
+            border-radius: 2px;
+            border: 2px solid #0e353a;
+            margin-right: 5px;
+        }
+
+        .show input:checked {
+            background-color: #abe0ed;
+        }
+
+        input[type="button"] {
+            background-color: #57c0d8;
+            border-color: #57aadd;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.05em;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        .monkey {
+            position: relative;
+            margin: 0px auto;
+            margin-bottom: 10px;
+            width: 150px;
+            height: 150px;
+            background-color: #abe0ed;
+            border-radius: 50%;
+            border: 2px solid #0e353a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .monkey_head {
+            width: 80px;
+            height: 80px;
+            top: 18px;
+            border-radius: 40px 40px 0 0;
+            border: 2px solid #0e353a;
+            position: absolute;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            border-bottom-color: #fff;
+        }
+
+        .q1,
+        .q2 {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 20px;
+            border: 2px solid #0e353a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 30px;
+        }
+
+        .q1::after,
+        .q2::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 20px;
+            border: 2px solid #0e353a;
+            z-index: 0;
+        }
+
+        .q1 {
+            left: -11px;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transform: rotate(-45deg);
+            background: linear-gradient(135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+        }
+
+        .q1::after {
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            background: linear-gradient(135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+        }
+
+        .q2 {
+            right: -11px;
+            transform: rotate(45deg);
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            background: linear-gradient(-135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+        }
+
+        .q2::after {
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            background: linear-gradient(-135deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+        }
+
+        .monkey_body {
+            width: 160px;
+            height: 150px;
+            bottom: -100px;
+            border-radius: 40px;
+            border: 2px solid #0e353a;
+            position: absolute;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+        }
+
+        .passw .monkey_body {
+            border-radius: 0px;
+        }
+
+        .monkey_body::after {
+            content: '';
+            width: 90px;
+            height: 90px;
+            top: 20px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: #def8f4;
+            filter: blur(2px);
+        }
+
+        .face {
+            width: 50px;
+            position: absolute;
+            top: 4px;
+            border-radius: 50%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #def8f4ff;
+            backdrop-filter: blur(6px);
+        }
+
+        .face::before {
+            content: '';
+            position: absolute;
+            border-radius: 20px 20px 0 15px;
+            top: -6px;
+            width: 42px;
+            height: 30px;
+            background-color: #fff;
+        }
+
+        .hair-b {
+            position: absolute;
+            transform: translate(10px, -10px) scale(.8);
+        }
+
+        .sq {
+            position: absolute;
+            bottom: -15px;
+            transform: translate(5px, 0px) scale(.8);
+        }
+
+        .hair-t {
+            position: absolute;
+            transform: translate(7px, -39px) scale(.8);
+        }
+
+        .hair-r {
+            position: absolute;
+            transform: translate(39px, 7px) scale(.85);
+        }
+
+        .hair-l {
+            position: absolute;
+            transform: translate(-36px, 7px) scale(.85);
+        }
+
+        .face-det {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            /* background-color: #fff; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .glass {
+            position: absolute;
+            top: 10px;
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5px;
+        }
+
+        .glass::before,
+        .glass::after {
+            content: '';
+            background-color: #30393c;
+            width: 6px;
+            transition: all .3s;
+            height: 6px;
+            border-radius: 5px;
+            animation: eye 5s linear infinite;
+        }
+
+        .foc .glass::before,
+        .foc .glass::after {
+            transform: translate(-4px, 5px) scale(.7);
+        }
+
+        .open .glass::before,
+        .open .glass::after {
+            transform: translateY(5px) scale(.7);
+        }
+
+        .passw .glass::before,
+        .passw .glass::after {
+            transform: translateY(0px) scale(.9);
+        }
+
+        .nose {
+            position: absolute;
+            top: 15px;
+            height: 8px;
+            transition: .3s;
+            width: 8px;
+            background-color: #30393c;
+            border-radius: 9px 5px 7px 11px / 4px 7px 11px 11px;
+        }
+
+        .foc .nose {
+            transform: translate(-5px, 4px) scale(.9);
+        }
+
+        .open .nose {
+            transform: translate(0, 3px) scale(.7);
+        }
+
+        .passw .nose {
+            transform: translate(0, 0px) scale(.9);
+        }
+
+        .mouth {
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 5px;
+            border: 3px solid #30393c;
+            border-top: 1px solid transparent;
+            border-radius: 0px 0px 10px 10px;
+            transition: all .3s;
+            overflow: hidden;
+        }
+
+        .foc .mouth {
+            transform: translate(-3px, 0px);
+        }
+
+        .open .mouth {
+            background-color: #60878d;
+            position: absolute;
+            top: 27px;
+            width: 26px;
+            height: 15px;
+            border: 2px solid #30393c;
+            /* border-top: 1px solid transparent; */
+            border-radius: 5px 5px 15px 15px;
+            transform: translate(0px, 0px);
+        }
+
+        .tht {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #fff;
+            top: -3px;
+            right: 3px;
+            border-radius: 2px;
+        }
+
+        .open .lan {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #9f5178;
+            bottom: -6px;
+            right: 6px;
+            border-radius: 50%;
+        }
+
+        .hand {
+            position: absolute;
+            width: 70px;
+            height: 35px;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            border: 2px solid #0e353a;
+            border-right: 1px solid transparent;
+            z-index: 5;
+            top: -22px;
+            left: -27px;
+            transition: .3s;
+            transform: rotate(90deg);
+            transform-origin: 0px 0px;
+        }
+
+        .hand.l {
+            transform: rotate(90deg);
+            top: -25px;
+            left: 160%;
+        }
+
+        .passw .hand {
+            transform: rotate(-25deg);
+        }
+
+        .passw .hand.l {
+            transform: rotate(206deg);
+        }
+
+        .hand.l {
+            transform: rotate(90deg);
+            top: 10px;
+            left: 120%;
+            transition-delay: .05s;
+        }
+
+        .passw .hand.l {
+            top: 12px;
+            left: 107%;
+        }
+
+        .fing {
+            position: absolute;
+            width: 23px;
+            height: 8px;
+            top: calc(var(--i)*7px + 1px);
+            right: -32px;
+            background: #e0f6f7;
+            border-radius: 0 5px 5px 0;
+            border: 2px solid #0e353a;
+            border-left: 1px solid transparent;
+            transition: .3s;
+            transform-origin: 0 0;
+            z-index: 2;
+        }
+
+        .fing.b {
+            width: 20px !important;
+            right: -20px;
+        }
+
+        .showing .c {
+            transform: rotate(35deg);
+        }
+
+        .showing .c.d {
+            border-bottom: 1px solid transparent;
+        }
+
+        .h-l {
+            position: absolute;
+            transform: rotate(10deg) scale(.6);
+            right: -24px;
+            z-index: 3;
+            top: -27px;
+        }
+
+        .h-r {
+            position: absolute;
+            transform: rotate(10deg) scale(.6);
+            right: -24px;
+            z-index: 3;
+            top: -27px;
+        }
+
+        .kf {
+            position: absolute;
+            right: -12px;
+            /* z-index: 2; */
+            top: 0;
+            border-radius: 3px;
+            width: 12px;
+            height: 30px;
+            border: 2px solid #0e353a;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            background: #e0f6f7;
+        }
+
+        @keyframes eye {
+
+            0%,
+            48%,
+            52%,
+            100% {
+                height: 6px;
+            }
+
+            50% {
+                height: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="wrapper">
+            <div class="monkey" id="monkey">
+                <div class="monkey_head">
+                    <div class="q1"></div>
+                    <div class="q2"></div>
+                    <div class="face">
+                        <svg class="hair-b" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="2.434cm" height="0.67cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M51.098,5.490 L50.902,4.510 L65.902,1.510 L66.098,2.490 L51.098,5.490 ZM51.000,6.000 L52.000,6.000 L52.000,12.000 L51.118,12.000 L52.224,12.553 L51.776,13.447 L42.224,8.671 L38.447,16.224 L37.553,15.776 L41.553,7.776 L42.000,8.000 L42.224,7.553 L51.000,11.941 L51.000,6.000 ZM26.110,7.736 L25.185,9.124 L25.416,9.277 L21.416,15.277 L21.000,15.000 L20.718,15.413 L1.718,2.413 L2.282,1.587 L20.865,14.302 L23.815,9.876 L23.584,9.723 L25.584,6.723 L26.000,7.000 L26.317,6.613 L37.317,15.613 L36.683,16.387 L26.110,7.736 Z" />
+                        </svg>
+
+                        <svg class="sq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="1.058cm" height="0.494cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M27.000,8.000 L26.803,8.460 L20.000,5.544 L20.000,10.399 L20.277,10.584 L19.723,11.416 L19.099,11.000 L19.000,11.000 L19.000,10.934 L11.313,5.810 L10.485,9.121 L10.000,9.000 L9.671,9.376 L1.671,2.376 L2.329,1.624 L9.713,8.085 L10.515,4.879 L11.000,5.000 L11.277,4.584 L19.000,9.732 L19.000,5.000 L20.000,5.000 L20.197,4.540 L26.356,7.180 L25.507,2.082 L26.493,1.918 L27.493,7.918 L27.000,8.000 Z" />
+                        </svg>
+
+                        <svg class="hair-t" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="1.552cm" height="0.706cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M35.416,17.277 L34.584,16.723 L39.914,8.727 L26.098,11.490 L26.000,11.000 L25.503,10.945 L26.366,3.179 L15.320,12.384 L15.014,12.017 L15.434,12.752 L14.566,13.248 L10.566,6.248 L11.434,5.752 L14.751,11.557 L26.680,1.616 L27.000,2.000 L27.497,2.055 L26.572,10.376 L40.902,7.510 L41.000,8.000 L41.416,8.277 L35.416,17.277 ZM10.000,5.000 L11.000,5.000 L11.000,6.000 L10.000,6.000 L10.000,5.000 ZM2.404,17.294 L1.596,16.706 L9.596,5.706 L10.404,6.294 L2.404,17.294 Z" />
+                        </svg>
+
+                        <svg class="hair-r" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="0.494cm" height="1.341cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M11.000,13.000 L11.000,14.000 L2.610,14.000 L8.635,22.607 L8.814,22.536 L9.120,23.299 L9.410,23.713 L8.590,24.287 L8.271,23.830 L4.186,25.464 L3.814,24.536 L7.682,22.989 L1.590,14.287 L2.000,14.000 L2.000,13.000 L10.354,13.000 L1.613,2.317 L2.387,1.683 L11.387,12.683 L11.000,13.000 ZM6.431,33.950 L2.543,25.203 L3.457,24.797 L7.457,33.797 L6.820,34.080 L8.158,34.526 L7.842,35.474 L1.842,33.474 L2.158,32.526 L6.431,33.950 Z" />
+                        </svg>
+
+                        <svg class="hair-l" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="0.494cm" height="1.305cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M3.375,13.000 L10.360,13.000 L10.610,12.688 L11.390,13.312 L11.000,13.800 L11.000,14.000 L10.840,14.000 L3.390,23.312 L2.610,22.688 L9.560,14.000 L2.625,14.000 L2.400,14.300 L1.600,13.700 L2.000,13.167 L2.000,13.000 L2.125,13.000 L10.600,1.700 L11.400,2.300 L3.375,13.000 ZM8.357,24.260 L8.536,23.814 L9.464,24.186 L9.376,24.406 L10.071,24.505 L9.929,25.495 L8.994,25.361 L5.939,33.000 L4.861,33.000 L7.975,25.216 L2.929,24.495 L3.071,23.505 L8.357,24.260 ZM4.000,34.000 L6.000,34.000 L6.000,33.209 L10.929,32.505 L11.071,33.495 L4.071,34.495 L3.929,33.505 L4.000,33.495 L4.000,34.000 Z" />
+                        </svg>
+                        <div class="face-det">
+                            <div class="glass"></div>
+                            <div class="nose">
+
+                            </div>
+                            <div class="mouth">
+                                <div class="tht"></div>
+                                <div class="lan"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="monkey_body">
+                    <div class="hand">
+                        <svg class="h-l" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="1.341cm" height="2.54cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M35.000,23.000 L35.386,23.318 L21.800,39.815 L32.207,44.545 L32.000,45.000 L32.416,45.277 L26.582,54.029 L34.441,68.765 L34.000,69.000 L33.918,69.493 L15.918,66.493 L16.082,65.507 L33.081,68.340 L25.559,54.235 L26.000,54.000 L25.584,53.723 L31.258,45.212 L20.793,40.455 L21.000,40.000 L20.614,39.682 L34.042,23.377 L19.934,21.496 L20.031,20.769 L19.464,22.186 L18.536,21.814 L25.419,4.605 L2.270,19.421 L1.730,18.579 L26.058,3.009 L26.536,1.814 L27.464,2.186 L27.085,3.133 L27.270,3.421 L26.867,3.679 L20.133,20.513 L35.066,22.504 L35.000,23.000 Z" />
+                        </svg>
+                        <div class="kf"></div>
+                        <div class="fing b" style="--i:0"></div>
+                        <div class="fing" style="--i:1"></div>
+                        <div class="fing c d" style="--i:2"></div>
+                        <div class="fing c" style="--i:3"></div>
+                    </div>
+                    <div class="hand l">
+                        <svg class="h-r" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="1.341cm" height="2.54cm">
+                            <path fill-rule="evenodd" stroke="rgb(14, 53, 58)" stroke-width="2px" stroke-linecap="butt"
+                                stroke-linejoin="miter" fill="none"
+                                d="M35.000,23.000 L35.386,23.318 L21.800,39.815 L32.207,44.545 L32.000,45.000 L32.416,45.277 L26.582,54.029 L34.441,68.765 L34.000,69.000 L33.918,69.493 L15.918,66.493 L16.082,65.507 L33.081,68.340 L25.559,54.235 L26.000,54.000 L25.584,53.723 L31.258,45.212 L20.793,40.455 L21.000,40.000 L20.614,39.682 L34.042,23.377 L19.934,21.496 L20.031,20.769 L19.464,22.186 L18.536,21.814 L25.419,4.605 L2.270,19.421 L1.730,18.579 L26.058,3.009 L26.536,1.814 L27.464,2.186 L27.085,3.133 L27.270,3.421 L26.867,3.679 L20.133,20.513 L35.066,22.504 L35.000,23.000 Z" />
+                        </svg>
+                        <div class="kf"></div>
+                        <div class="fing" style="--i:0"></div>
+                        <div class="fing" style="--i:1"></div>
+                        <div class="fing" style="--i:2"></div>
+                        <div class="fing b" style="--i:3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <label for="email">Email</label>
+                <input type="text" id="email">
+                <div>
+                    <label for="pass">Password</label>
+                    <span class="show">
+                        <input type="checkbox" id="show">
+                        <label for="show">Show</label>
+                    </span>
+                </div>
+                <input type="password" id="pass">
+                <input type="button" value="Log in">
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('email').addEventListener('focus', () => {
+            document.querySelector('.face-det').classList.add('foc')
+        })
+        document.getElementById('email').addEventListener('input', (e) => {
+            document.querySelector('.face-det').classList.add('open')
+            if (e.target.value == '') {
+                document.querySelector('.face-det').classList.remove('open')
+            }
+        })
+        document.getElementById('pass').addEventListener('focus', (e) => {
+            document.getElementById('monkey').classList.add('passw')
+            document.querySelector('.face-det').classList.remove('foc')
+        })
+        document.getElementById('show').addEventListener('click', (e) => {
+            if (e.target.checked) {
+                document.querySelector('.monkey_body').classList.add('showing')
+                document.getElementById('pass').setAttribute('type', 'text')
+            } else {
+                document.querySelector('.monkey_body').classList.remove('showing')
+                document.getElementById('pass').setAttribute('type', 'password')
+            }
+        })
+        document.querySelector('input[type="button"]').addEventListener('click', () => {
+            document.querySelector('.monkey_body').classList.remove('showing');
+            document.querySelector('.face-det').classList.remove('open')
+            document.querySelector('.face-det').classList.remove('foc')
+            document.getElementById('monkey').classList.remove('passw')
+        }); 
+    </script>
+</body>
+
+</html>

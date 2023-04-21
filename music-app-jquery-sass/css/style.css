@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.phone ul#musicList p, .phone ul#musicList li#music, .phone #musicplayer, .phone #musicplayer #runner p, .phone #musicplayer .btns, .phone #musicplayer .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: rgba(255, 183, 213, 0.867);
+}
+
+.phone {
+  position: relative;
+  width: 290px;
+  height: 590px;
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 25px 20px #0003;
+          box-shadow: 0px 25px 20px #0003;
+  overflow: hidden;
+  background: #131323;
+}
+
+.phone #artistImg {
+  position: relative;
+  width: 100%;
+  left: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  top: 0;
+  background: url(../img/img_10.jpg);
+  height: 200px;
+  background-size: cover;
+  background-position: center -190px;
+  -webkit-box-shadow: inset 0px -60px 50px #131323;
+          box-shadow: inset 0px -60px 50px #131323;
+}
+
+.phone #artistImg #musicTitle {
+  position: absolute;
+  color: #fff;
+  left: 15px;
+  bottom: 10px;
+}
+
+.phone #musicAlbums {
+  position: relative;
+  width: 100%;
+  height: 160px;
+}
+
+.phone #musicAlbums p {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #fff;
+  font-size: 0.89em;
+  font-weight: 600;
+}
+
+.phone #musicAlbums .swiper-container {
+  width: 93%;
+  padding-top: 30px;
+  margin-left: 10px;
+}
+
+.phone #musicAlbums .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 120px;
+  padding: 0 5px;
+  margin: 2px;
+}
+
+.phone #musicAlbums .swiper-slide img {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+
+.phone #musicAlbums .swiper-slide .content {
+  position: relative;
+  font-size: .9em;
+  color: #fff;
+  font-weight: lighter;
+  line-height: 15px;
+}
+
+.phone #musicAlbums .swiper-slide .content span {
+  position: relative;
+  font-size: 0.7em;
+  color: #aaa;
+}
+
+.phone ul#musicList {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.phone ul#musicList::-webkit-scrollbar {
+  display: none;
+}
+
+.phone ul#musicList p {
+  position: relative;
+  width: 100%;
+  top: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  color: #fff;
+}
+
+.phone ul#musicList li#music {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  color: #fffb;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 15px 10px 15px;
+  font-size: 0.8em;
+}
+
+.phone ul#musicList li#music .icon .fa {
+  margin-right: 10px;
+}
+
+.phone #musicplayer {
+  position: absolute;
+  width: 100%;
+  border-radius: 40px;
+  background: #fff;
+  height: 92%;
+  z-index: 2;
+  bottom: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.phone #musicplayer p {
+  position: relative;
+  margin-top: 25px;
+  font-size: 0.95em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.phone #musicplayer p span {
+  color: #888;
+  font-size: 0.87em;
+  font-weight: normal;
+}
+
+.phone #musicplayer #imgMusic {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+  -webkit-filter: drop-shadow(2px 7px 15px #0005);
+          filter: drop-shadow(2px 7px 15px #0005);
+  background: url(../img/pexels-photo-6647412.jpeg);
+  background-size: cover;
+  background-position: center;
+  margin-top: 20px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.phone #musicplayer .titl {
+  text-align: center;
+}
+
+.phone #musicplayer .titl h2#Artist {
+  font-size: 1.3em;
+  margin: 20px 0 2px 0;
+  font-weight: bold;
+}
+
+.phone #musicplayer .titl h3#Title {
+  color: #999;
+  font-size: 1em;
+  margin-top: 3px;
+}
+
+.phone #musicplayer #runner {
+  position: relative;
+  width: 85%;
+  cursor: pointer;
+  height: 4px;
+  background: #ddd;
+  border-radius: 4px;
+  margin-top: 35px;
+}
+
+.phone #musicplayer #runner #circ {
+  position: absolute;
+  width: 0%;
+  top: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+  left: 0;
+  height: 100%;
+  background: #000;
+  border-radius: 4px;
+}
+
+.phone #musicplayer #runner #circ::after {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #000;
+  content: '';
+  right: -3px;
+  top: -5px;
+  -webkit-box-shadow: 0px 0px 5px #0009;
+          box-shadow: 0px 0px 5px #0009;
+}
+
+.phone #musicplayer #runner p {
+  position: absolute;
+  width: 100%;
+  font-size: 0.8em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  top: -15px;
+}
+
+.phone #musicplayer .btns {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.phone #musicplayer .btns .btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+}
+
+.phone #musicplayer .btns #play {
+  position: relative;
+  width: 55px;
+  background: #0001;
+  height: 55px;
+  border: none;
+  font-size: 1.1em;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.phone #musicplayer .btns #play .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.phone #musicplayer .btns #play .pl {
+  display: block;
+}
+
+.phone #musicplayer .btns #play .ps {
+  display: none;
+}
+
+.phone #musicplayer .btns #play:active {
+  background: #ccc;
+}
+
+.phone #musicplayer .btns #play.playing .ps {
+  display: block;
+}
+
+.phone #musicplayer .btns #play.playing .pl {
+  display: none;
+}
+
+.phone #musicplayer .icons {
+  position: relative;
+  width: 60%;
+  margin-top: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.phone #musicplayer .icons .fa {
+  position: relative;
+  color: #aaa;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+}
+
+.phone.on #musicplayer {
+  height: 14%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.phone.on #musicplayer p {
+  display: none;
+}
+
+.phone.on #musicplayer #imgMusic {
+  width: 50px;
+  height: 50px;
+  margin-top: 0;
+  border-radius: 50%;
+}
+
+.phone.on #musicplayer .titl {
+  text-align: center;
+}
+
+.phone.on #musicplayer .titl h2#Artist {
+  font-size: 1em;
+  margin: 2px 0 2px 0;
+  font-weight: bold;
+}
+
+.phone.on #musicplayer .titl h3#Title {
+  color: #999;
+  font-size: .8em;
+  text-align: left;
+  margin-top: 3px;
+}
+
+.phone.on #musicplayer #runner {
+  display: none;
+}
+
+.phone.on #musicplayer .btns {
+  width: 30%;
+  margin-top: 0;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.phone.on #musicplayer .btns .btn {
+  display: none;
+}
+
+.phone.on #musicplayer .icons {
+  display: none;
+}
+
+.volume {
+  position: relative;
+  width: 30px;
+  height: 160px;
+  border-radius: 20px;
+  margin: 10px;
+  border: 1px solid #000;
+  background: #444;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.volume .vol {
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  bottom: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  left: 0;
+  background: #aaa;
+}
+/*# sourceMappingURL=style.css.map */

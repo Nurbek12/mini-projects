@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="content">
+                <div class="icon"></div>
+                <p>Newyork</p>
+                <h2>10°C</h2>
+                <p>Sunday</p>
+                <p>26/7/2020</p>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        const apikey = '027194d21cc7da8e39e51ef3f00ecfa5';
+        window.addEventListener('load', async () => {
+            let long = 41;
+            let lat = 69;
+            // Accessing Geolocation of User
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    long, lat = position.coords.longitude, position.coords.latitude;
+                });
+            }
+
+            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${lat},${long}&appid=${apikey}&units=metric`, {
+                method: 'GET',
+            })
+            const result = await data.json()
+            console.log(result);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canv"></canvas>    
+    <script src="./js/three.js"></script>
+    <script src="./js/orbitControls.js"></script>
+    <script>
+        let j = 0;
+        const planets_data = [
+            { img: 'sunmap.jpg', size: 10, x: 0, y: 0, rsp: 0.0004 },
+            { img: 'venusmap.jpg', size: 2, x: 42, y: 0, rsp: 0.005 },
+            { img: 'mercurymap.jpg', size: 2.3, x: 65, y: 0, rsp: 0.0047 },
+            { img: '7MXox.jpg', size: 3, x: 95, y: 0, rsp: 0.0044 },
+            { img: 'moon.jpg', size: 0.7, x: 95, y: 5, rsp: 0.0044 },
+            { img: 'mars_1k_color.jpg', size: 2.7, x: 131, y: 0, rsp: 0.0041 },
+            { img: 'jupitermap.jpg', size: 7, x: 176, y: 0, rsp: 0.0038 },
+            { img: 'saturnmap.jpg', size: 3.4, x: 240, y: 0, rsp: 0.0035 },
+            { img: 'uranusmap.jpg', size: 3.2, x: 307, y: 0, rsp: 0.0032 },
+            { img: 'neptunemap.jpg', size: 3.5, x: 408, y: 0, rsp: 0.0029 },
+            // { img: 'plutomap1k.jpg', size: 10, x: 4, y: 5, rsp: 0.004 },
+        ]
+        const planets_array = [];
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById('canv')
+        });
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.setZ(30);
+        renderer.render(scene, camera);
+        const light = new THREE.DirectionalLight(0xffffff, 30, 300);
+        light.position.set(0, 0, 0)
+        light.castShadow = true;
+        scene.add(light)
+        
+        const pointLigth = new THREE.PointLight(0xffffff);
+        pointLigth.position.set(5, 5, 5);
+
+        const ambLig = new THREE.AmbientLight(0xffffff);
+        scene.add(pointLigth, ambLig);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+
+        function addStar(){
+            const gm = new THREE.SphereGeometry(0.25, 24, 24);
+            const mt = new THREE.MeshStandardMaterial({ color: 0xffffff });
+            const star = new THREE.Mesh(gm, mt);
+
+            const [x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
+            star.position.set(x,y,z);
+            scene.add(star);
+        }
+
+        Array(400).fill().forEach(addStar);
+        const spaceTexture = new THREE.TextureLoader().load('planets/blackspace.jpg');
+        scene.background = spaceTexture;
+        class Planet{
+            constructor(img, sz, x, y, rsp){
+                this.img = img;
+                this.sz = sz;
+                this.x = x;
+                this.y = y;
+                this.rsp = rsp;
+                this.alp = 0;
+                this.pl = null;
+            }
+            addPlanet(){
+                const planetTexture = new THREE.TextureLoader().load('planets/'+this.img);
+                this.pl = new THREE.Mesh(
+                new THREE.SphereGeometry(this.sz, 10,10),
+                new THREE.MeshStandardMaterial({
+                        map: planetTexture
+                    })
+                )
+
+                scene.add(this.pl);
+                this.pl.position.set(this.x,this.y)
+            }
+            rt(){
+                this.pl.rotation.y += this.rsp*10;
+                this.pl.position.x = Math.sin(this.alp)*this.x;
+                this.pl.position.z = Math.cos(this.alp)*this.x;
+                this.alp += this.rsp;
+            }
+        }
+        planets_data.forEach(pl => {
+            planets_array.push(new Planet(pl.img, pl.size, pl.x, pl.y, pl.rsp))
+        })
+        planets_array.forEach(pl => pl.addPlanet())
+        function animate(){
+            requestAnimationFrame(animate)
+            planets_array.forEach(pl => pl.rt())
+            // camera.position.x = -Math.sin(j)*55;
+            // camera.position.z = -Math.cos(j)*55;
+            controls.update()
+            renderer.render(scene, camera)
+            // j += 0.004;
+        }
+        animate()
+    </script>
+</body>
+</html>

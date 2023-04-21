@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="img loading"></div>
+        <h1 class="heading loading"></h1>
+        <p class="content loading"></p>
+    </div>
+    <script>
+        setInterval(() => {
+            const img = document.querySelector('.img');
+            const hea = document.querySelector('.heading');
+            const cont = document.querySelector('.content');
+
+            cont.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eius, accusantium eligendi deserunt, praesentium iusto eveniet sunt ratione quos vitae quaerat neque itaque dicta at provident eaque vel nemo hic.';
+            cont.classList.remove('loading');
+    
+            hea.innerHTML = 'Some title1';
+            hea.classList.remove('loading');
+    
+            img.innerHTML = '<img src="./photo.jpg" width="340" />';
+            img.classList.remove('loading');
+        }, 2000)
+    </script>
+</body>
+</html>

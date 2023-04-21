@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app" v-cloak>
+        <div class="wrapper">
+            <div class="time">{{time}}</div>
+            <div class="youwin" v-show="windgame()">You win {{ time }}</div>
+            <div :class="`board x${x} y${y} c${c} n${n}`" id="board" ref="board">
+                <div 
+                v-for="(g, i) in gamearr"
+                :key="i"
+                :class="`square ${typeof g === 'string' ? 'blocked':''} num${g} ${Math.round(g)<g?'danger':''}`"
+                @click="renderHover(i)"
+                >{{g==0?'':Math.round(g)}}</div>
+            </div>
+            <div class="btns">
+                <div class="btn" @click="addNumArr(1)">1</div>
+                <div class="btn" @click="addNumArr(2)">2</div>
+                <div class="btn" @click="addNumArr(3)">3</div>
+                <div class="btn" @click="addNumArr(4)">4</div>
+                <div class="btn" @click="addNumArr(5)">5</div>
+                <div class="btn" @click="addNumArr(6)">6</div>
+                <div class="btn" @click="addNumArr(7)">7</div>
+                <div class="btn" @click="addNumArr(8)">8</div>
+                <div class="btn" @click="addNumArr(9)">9</div>
+                <div class="btn" @click="addNumArr(0)">&leftarrow;</div>
+            </div>
+        </div>
+    </div>
+    <script src="./vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

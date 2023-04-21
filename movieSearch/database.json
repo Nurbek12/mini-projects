@@ -1,0 +1,200 @@
+[
+    
+    {
+        "name":"Bugz Bunny season 2",
+        "series":24,
+        "format":"Cartoon",
+        "img":"bugz bunny 2.gif",
+        "age":"6+"
+    },
+    {
+        "name":"Bugz Bunny season 3",
+        "series":22,
+        "format":"Cartoon",
+        "img":"bugz bunny 3.gif",
+        "age":"6+"
+    },
+    
+    {
+        "name":"Bugz Bunny season 5",
+        "series":9,
+        "format":"Cartoon",
+        "img":"bugz bunny 5.gif",
+        "age":"6+"
+    },
+    {
+        "name":"Bugz Bunny season 6",
+        "series":24,
+        "format":"Cartoon",
+        "img":"bugz bunny 6.gif",
+        "age":"6+"
+    },
+    {
+        "name":"Bugz Bunny season 7",
+        "series":22,
+        "format":"Cartoon",
+        "img":"bugz bunny 7.gif",
+        "age":"6+"
+    },
+    {
+        "name":"Bugz Bunny season 8",
+        "series":28,
+        "format":"Cartoon",
+        "img":"bugz bunny 8.gif",
+        "age":"6+"
+    },
+    {
+        "name":"Charlie Angels",
+        "series":1,
+        "format":"Cinema",
+        "img":"charlie angels.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Doctor House season 1",
+        "series":45,
+        "format":"Scientific",
+        "img":"Doctor House 1.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Doctor House season 2",
+        "series":56,
+        "format":"Scientific",
+        "img":"Doctor House 2.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Doctor Strange 2",
+        "series":1,
+        "format":"Fantasty",
+        "img":"doctor strange.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Fenis and Ferb",
+        "series":1,
+        "format":"Cartoon",
+        "img":"fenis and ferb 1.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Fenis and Ferb 2",
+        "series":2,
+        "format":"Cartoon",
+        "img":"fenis and ferb 2.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Garphild",
+        "series":1,
+        "format":"Cartoon",
+        "img":"garphild.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Gravity Falls season 1",
+        "series":22,
+        "format":"Cartoon",
+        "img":"Gravity Falls 1.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Gravity Falls season 2",
+        "series":27,
+        "format":"Cartoon",
+        "img":"gravity falls 2.png",
+        "age":"6+"
+    },
+    {
+        "name":"Gravity Falls season 3",
+        "series":14,
+        "format":"Cartoon",
+        "img":"Gravity Falls 3.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"John Wick 3",
+        "series":1,
+        "format":"Millitant",
+        "img":"john wick 3.jpeg",
+        "age":"18+"
+    },
+    {
+        "name":"Joker",
+        "series":3,
+        "format":"Fantasty",
+        "img":"joker.jpg",
+        "age":"18+"
+    },
+    {
+        "name":"Lethal Weapon",
+        "series":30,
+        "format":"Detective",
+        "img":"Lethal Weapon.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Mr Bean",
+        "series":20,
+        "format":"Comedia",
+        "img":"Mr Bean.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Peppa Pig",
+        "series":40,
+        "format":"Cartoon",
+        "img":"pig peppa.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Spanj Bob",
+        "series":60,
+        "format":"Cartoon",
+        "img":"spanj bob.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Summerki",
+        "series":50,
+        "format":"Fantasty",
+        "img":"summerki.jpg",
+        "age":"18+"
+    },
+    {
+        "name":"Three Bears",
+        "series":40,
+        "format":"Cartoon",
+        "img":"three bear.jpg",
+        "age":"6+"
+    },
+    {
+        "name":"Ninja Turtles 1",
+        "series":1,
+        "format":"Fantasty",
+        "img":"TMNT 1.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Ninja Turtles 2",
+        "series":1,
+        "format":"Fantasty",
+        "img":"TMNT 2.jpg",
+        "age":"16+"
+    },
+    {
+        "name":"Tom and Jerry season 1",
+        "series":40,
+        "format":"Cartoon",
+        "img":"tom and jerry 1.png",
+        "age":"6+"
+    },
+    {
+        "name":"Tom and Jerry season 2",
+        "series":50,
+        "format":"Cartoon",
+        "img":"tom and jerry 2.jpg",
+        "age":"6+"
+    }
+]

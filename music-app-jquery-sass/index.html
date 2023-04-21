@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="phone on">
+        <div id="artistImg">
+            <h2 id="musicTitle">Dayseeker</h2>
+        </div>
+        <div id="musicAlbums">
+            <p>Albums</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <!-- Add Pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+              </div>
+        </div>
+        <ul id="musicList">
+            <p><span>Host popular</span> All</p>
+            
+        </ul>
+        <div id="musicplayer">
+            <p id="isToggle1">
+                New playing<br>
+                <span>My playlist</span>
+            </p>
+            <div id="imgMusic">
+
+            </div>
+            <div class="titl">
+                <h2 id="Artist">
+                    Crooked Soul
+                </h2>
+                <h3 id="Title">Dayseeker</h3>
+            </div>
+            <div id="runner">
+                <div id="circ"></div>
+                <p>
+                    <span id="time">0:00</span>
+                    <span id="dur">2:56</span>
+                </p>
+            </div>
+            <div class="btns">
+                <div id="back" class="btn">
+                    <i class="fa fa-backward"></i>
+                </div>
+                <div id="play" class="">
+                    <i class="fa fa-play pl"></i>
+                    <i class="fa fa-pause ps"></i>
+                </div>
+                <div id="forw" class="btn" onclick="next()">
+                    <i class="fa fa-forward"></i>
+                </div>
+            </div>
+            <div class="icons">
+                <i class="fa fa-refresh" id="repl"></i>
+                <i class="fa fa-heart" id="hrt"></i>
+                <i class="fa fa-random" id="rand"></i>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jQuery.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

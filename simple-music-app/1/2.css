@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333; 
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    width: 300px;
+    height: 570px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+}
+.container .nav{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container .nav span{
+    cursor: pointer;
+    font-size: 1.2em;
+}
+.container .img-con{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .img-con #img{
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background: url(/img/jhay-cortez.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,.5));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .img-con #img::before{
+    content: '';
+    position: absolute;
+    width: 196px;
+    height: 196px;
+    border-radius: 50%;
+    border: 4px solid rgba(0,0,0,.1);
+}
+.container .img-con #img #crc{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    transform-origin: center 108px;
+    transition: .5s;
+    /* transform: rotate(0deg); */
+    border: 4px solid #fa1631;
+    top: -23px;
+    /* animation: cr 30s linear forwards; */
+}
+/* @keyframes cr{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+} */
+
+.container .img-con svg{
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    transform: rotate(-90deg) rotateY(0deg);
+}
+svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 4;
+    stroke: #fa1631;
+    transition: .5s;
+    transform: translate(5px,5px);
+    stroke-linecap: none;
+    stroke-dasharray: 625px;
+    stroke-dashoffset: 625px;
+    /* animation: ln 30s linear forwards; */
+}
+/* @keyframes ln{
+    0%{
+        stroke-dashoffset: 625px;
+    }
+    100%{
+        stroke-dashoffset: 0px;
+    }
+} */
+.container .title{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .title h1{
+    top: 0;
+    position: relative;
+    color: #333;
+    font-size: 1.3em;
+    margin: 7px;
+}
+.container .title h3{
+    position: relative;
+    color: #888;
+    font-size: 1em;
+}
+.container .navigation{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .navigation ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .navigation ul li{
+    position: relative;
+    margin: 5px;
+    list-style: none;
+}
+#prev,
+#next{
+    position: relative;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #999;
+    text-align: center;
+    color: #777;
+    font-size: 1.1em;
+    padding: 0px 17px 0px 0px;
+}
+#next{
+    padding: 0px 0px 0px 17px;
+}
+#play{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #fa1631;
+    box-shadow: 0px 7px 15px #fa1631;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.6em;
+    padding: 1px 0px 0px 1px;
+    line-height: 60px;
+    color: #fff;
+}
+ul li.eg{
+    transform: translateX(-30px);
+}
+ul li.er{
+    position: absolute;
+    transform: translateX(30px);
+}
+ul li.er button,
+ul li.eg button{
+    border: none;
+    font-size: 1em;
+    color: #888;
+    cursor: pointer;
+}
+#list{
+    position: absolute;
+    width: 200px;
+    top: 90%;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: chartreuse; */
+}
+#list .send{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    transform: scale(.7) translateY(-45px);
+    background: url(../img/artworks-000084199785-0hssgs-t500x500.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#list .send:nth-child(2){
+    transform:scale(.8) translateY(-15px);
+    background: url(../img/IMG_20201029_184918_111.jpg);
+    background-size: cover;
+}
+#list .send:nth-child(3){
+    transform:scale(.9) translateY(10px);
+    background: url(../img/jhay-cortez.jpg);
+    background-size: cover;
+}

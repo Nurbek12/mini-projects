@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: url(./imgg/pexels-kai-pilger-1341279.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    /* animation: rr 200s linear infinite; */
+} 
+@keyframes rr{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position:0 3433px;
+    } 
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* cursor: none; */
+}
+span.bullets{
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background: transparent;
+    border-radius: 5px;
+    animation: ss .7s linear infinite;
+}
+@keyframes ss{
+    0%{
+        opacity: 1;
+        top: 90%;
+        filter: blur(10px);
+    }
+    20%{
+        filter: blur(0px);
+    }
+    94%{
+        opacity: 1;
+    }
+    100%{
+        top: 0;
+        opacity: .8;
+    }
+}
+span::before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: yellow;
+    border-radius: 5px;
+    transform: translateX(-33px);
+    box-shadow: 0 0 4px 0px rgba(255,255,0,.9),
+    0 0 7px 0px rgba(255,255,0,.8),
+    0 0 10px 0px rgba(255,255,0,.7),
+    0 0 13px 0px rgba(255,255,0,.6),
+    0 0 16px 0px rgba(255,255,0,.5);
+}
+span::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background: yellow;
+    border-radius: 5px;
+    transform: translateX(-9px);
+    box-shadow: 0 0 4px 0px rgba(255,255,0,.9),
+    0 0 7px 0px rgba(255,255,0,.8),
+    0 0 10px 0px rgba(255,255,0,.7),
+    0 0 13px 0px rgba(255,255,0,.6),
+    0 0 16px 0px rgba(255,255,0,.5);
+}
+.rocket{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 84%;
+    background-image: url(./imgg/22.png);
+    transform: translatex(-50px);
+    background-size: cover;
+    z-index: 1;
+    display: flex;
+}
+@keyframes ss{
+    0%{
+        opacity: 1;
+        top: 90%;
+        filter: blur(0px);
+    }
+    20%{
+        filter: blur(0px);
+    }
+    94%{
+        opacity: 1;
+    }
+    100%{
+        top: 0;
+        opacity: .8;
+    }
+}
+.enemy{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: -5%;
+    transform: rotate(180deg) translatey(-40px);
+    background-size: cover;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+}
+.r2{
+    background-image: url(./imgg/kisspng-sprite-spacecraft-two-dimensional-space-spaceshipo-spaceship-5abca831d18843.9337642415223132658583.png);
+}
+.r1{
+    background-image: url(./imgg/kisspng-spacecraft-spaceshipone-clip-art-space-craft-5acb93b3ee5966.5866683215232910599763.png);
+}
+.r3{
+    background-image: url(./imgg/kisspng-2d-computer-graphics-sprite-ship-drawing-spaceship-5ac745ed20a7d3.7905917115230090051338.png);
+}
+#score{
+    position: absolute;
+    color: #fff;
+    font-weight: 900;
+    font-size: 2em;
+    font-family: sans-serif;
+    left: 10px;
+    bottom: 5px;
+}
+.asad{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4444;
+    /* background: #fff; */
+}

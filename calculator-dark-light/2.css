@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+:root{
+    --bg: #f0f0f0;
+    --number: #999;
+    --operation: #006;
+    --bsf: #fff;
+    --bsb: #0004;
+    --inp: #0009;
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #777;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card{
+    position: relative;
+    width: 280px;
+    height: 560px;
+    border-radius: 30px;
+    background: var(--bg);
+    transition: all .4s;
+    box-shadow: 15px 8px 10px 3px var(--bsb),
+    inset 5px 0px 10px 5px var(--bsf),
+    inset -10px 0px 15px var(--bsb);
+    padding:5px 3px;
+}
+.card.on{
+    --bg: #010011;
+    --number: #fff;
+    --operation: #ff7300;
+    --bsf: #fff2;
+    --bsb: #0004;
+    --inp: #fff;
+}
+.card::before,
+.card::after{
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(0deg,
+    #0002 0%, #0002 1%,
+    transparent 1%,  transparent 99%,
+    #0002 99%, #0002 100%);
+    left: 30px;
+}
+.card::after{
+    left: 230px;
+}
+.screen{
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+    border: 1px solid #0002;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    flex-direction: column;
+}
+#val{
+    position: relative;
+    width: 90%;
+    height: 90px;
+    margin-top: 60px;
+    border-radius: 7px;
+    box-shadow: 4px 4px 10px 0px var(--bsb),
+    -5px -5px 10px 0px var(--bsf),
+    inset -4px -4px 10px 0px var(--bsf),
+    inset 4px 4px 10px 0px #0003;
+    background: #0000;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    text-align: end;
+    color: var(--inp);
+    font-weight: bold;
+    overflow-x: auto;
+}
+.btns{
+    position: relative;
+    width: 90%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 0px var(--bsb),
+    -4px -4px 10px 0px var(--bsf);
+    cursor: pointer;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--number);
+}
+.btn.op{
+    color: var(--operation);
+}
+.btn.v{
+    height: 100px;
+    position: absolute;
+    right: 5px;
+    bottom: 0px;
+}
+.btn.u{
+    opacity: 0;
+}

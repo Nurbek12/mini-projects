@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #3a3d44;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+.card{
+    position: relative;
+    width: 260px;
+    height: 550px;
+    border-radius: 40px;
+    background: #232428;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.card ul.s{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    height: 100px;
+    justify-content: center;
+}
+
+.card ul.s li{
+    position: relative;
+    color: #666;
+    width: 40px;
+    font-size: .8em;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    list-style: none;
+}
+.card ul.s span{
+    position: absolute;
+    color: #eee;
+    font-weight: lighter;
+    z-index: 11;
+    cursor: pointer;
+    transform:rotate(90deg) translate(-50px,-100px);
+}
+.card ul.s li.send{
+    width: 100px;
+    border-radius: 50px 50px 0px 0px;
+    z-index: 0;
+    height: 120px;
+    background: #1c1c1c;
+    box-shadow: inset 2px 2px 3px #000,
+    inset -1px -1px 3px #555;
+    transform: translateY(80px);
+    display: flex;
+    padding: 25px 0px 0px 0px;
+    justify-content: center;
+    align-items: flex-start;
+    color: #bbb;
+}
+.card:nth-child(1) .circle{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px #0007;
+    background: #232428;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20px);
+}
+.card:nth-child(1) .circle .timer{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:nth-child(1) .circle .timer span{
+    position: absolute;
+    width: 2px;
+    height: 7px;
+    background: #555;
+    transform:translate(2px,-85px) rotate(calc(6deg*var(--i)));
+    transform-origin:0px 90px;
+}
+.card:nth-child(1) .circle .circ{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    box-shadow: 4px 4px 10px #0009;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+}
+@keyframes r{
+    0%{
+        transform: rotate(odeg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.card:nth-child(1) .circle .circ::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgb(245, 180, 213);
+    border: .7px solid red;
+    animation: r  1s linear infinite;
+    transform-origin: center 75px;
+    animation-play-state: paused;
+}
+.card:nth-child(1) .circle.run .circ::before{
+    animation-play-state: running;
+}
+.card:nth-child(1) .circle #time{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #161719;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    font-weight: lighter;
+    text-shadow: 0px 0px 5px #fff4;
+    font-family: monospace;
+    cursor: pointer;
+    font-size: 1.8em;
+}
+.control{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(80px);
+}
+.control ul{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control ul li{
+    position: relative;
+    list-style: none;
+    width: 100px;
+    height: 65px;
+    background: #232428;
+    color: #aaa;
+    margin: 5px;
+    display: flex;
+    align-items:flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 9px #0007,
+    -1px -1px 3px #fff3;
+}
+.control ul li span.delete{
+    position: absolute;
+    font-size: 0.8em;
+    cursor: pointer;
+    transform: translate(80px,-20px);
+}
+.control ul li span{
+    position: relative;
+    font-size: 0.9em;
+    color: #888;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.control ul li h4{
+    position: relative;
+    font-size: 1.1em;
+    font-weight: lighter;
+    color: #aaa;
+    font-family: monospace;
+}
+.control .butn{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+}
+#add,.control .butn button{
+    position: relative;
+    width: 90px;
+    border: none;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #232428;
+    box-shadow: 3px 3px 10px #0009;
+    font-size: .7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #6e6a8c;
+}
+#start:focus,#adder:active, #add:active, .control .butn button:active{
+    background: #1e1f21;
+    box-shadow: inset 1px 1px 3px #0006,
+    inset -1px -1px 2px #fff3;
+}
+#reset{
+    color: #9e585c;
+}
+.card:nth-child(2) ul.s li:nth-child(3){
+    position: relative;
+    transform: translateX(-12px);
+}
+.card:nth-child(2) .circle{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    background: #232428;
+    border-radius: 50%;
+    transform: translateY(10px);
+    box-shadow: 4px 5px 15px #0007,
+    -1px -1px 3px #fff2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:nth-child(2) .circle .clock{
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #232428;
+    box-shadow: 2px 3px 5px #0008,
+    -1px -1px 3px #fff3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:nth-child(2) .circle .clock h3{
+    position: absolute;
+    font-family: monospace;
+    color: #bbb;
+    font-size: 1.5em;
+    transform: translate(calc(1px*(var(--x))),calc(1px*(var(--y))));
+}
+.card:nth-child(2) .circle .clock .cc{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #161719;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:nth-child(2) .circle .clock .cc::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #232428;
+}
+.card:nth-child(2) .circle .clock .cc::after{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    content: '';
+    background: #6e6a8c;
+    border-radius: 50%;
+    z-index: 11111;
+}
+.card:nth-child(2) .circle .clock .cc #mm{
+    position: absolute;
+    width: 3.4px;
+    height: 43px;
+    background: #aaa;
+    transform: translate(0px,-15px);
+    transform-origin: 1.7px 36px;
+}
+.card:nth-child(2) .circle .clock .cc #hh{
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background: #9e585c;
+    transform: translate(0px,-15px);
+    transform-origin: 2px 30px;
+}
+.ul{
+    position: relative;
+    transform: translateY(40px);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 160px;
+    overflow-y: auto;
+    padding: 10px 0px 0px 0px;
+}
+.ul::-webkit-scrollbar{
+    position: absolute;
+    background: #0005;
+    width: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+.ul li{
+    position: relative;
+    width: 80%;
+    height: 64px;
+    list-style: none;
+    border-radius: 15px;
+    background: #232428;
+    box-shadow: 0px 3px 5px #0009;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: 5px;
+}
+.ul li .content{
+    position: relative;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+}
+.ul li .content span{
+    font-size: 0.55em;
+    color: #888;
+    text-transform: uppercase;
+}
+.ul li .content h2,b{
+    color: #999;
+    font-family: monospace;
+}
+.ul li .content h4{
+    position: relative;
+    color: #777;
+    font-size: 0.95em;
+    font-family: monospace;
+}
+.ul li #toggle{
+    position: relative;
+    width: 25px;
+    height: 15px;
+    border-radius: 10px;
+    background: #f007;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    transition: .2s;
+}
+.ul li #toggle.active{
+    background: #0f07;
+}
+.ul li #toggle .main{
+    position: relative;
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .2s;
+    left: 0;
+}
+.ul li #toggle.active .main{
+    left: 8px;
+}
+button#add{
+    transform: translateY(50px);
+}
+.form{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background: #232428;
+    z-index: 11;
+    box-shadow: 0px 0px 10px #0009,
+    0px 0px 0px 1000px #0009;
+    border-radius: 15px;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+input{
+    outline: none;
+}
+input[type="number"]{
+    position: relative;
+    width: 200px;
+    height: 30px;
+    background: #0009;
+    border: none;
+    padding: 5px;
+    color: #eee;
+}
+select{
+    position: relative;
+    background: #0009;
+    color: #999;
+}
+button{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    background: #0009;
+    border: none;
+    border-radius: 20px;
+    color: #999;
+    cursor: pointer;
+}

@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 350px;
+    height: 520px;
+    box-shadow: 0 0 30px #0001;
+    border: 2px solid #52d0e9;
+    padding: 25px;
+}
+.infpanel{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.infpanel .pnl{
+    text-align: center;
+}
+.pnl .fa{
+    font-size: 1.8em;
+}
+.pnl span{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.pnl:nth-child(1){
+    color: #3cbad8;
+}
+.pnl:nth-child(2){
+    color: #3587d6;
+}
+.pnl:nth-child(3){
+    color: #7d7d7d;
+}
+.board{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    width: 98px;
+    height: 98px;
+    cursor: pointer;
+    border: 1px solid #aaa7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square:not(.nemp):hover{
+    background: #0001;
+}
+.nemp{
+    cursor: no-drop;
+}
+.square:nth-child(1){
+    border-top: none;
+    border-left: none;
+}
+.square:nth-child(2){
+    border-top: none;
+}
+.square:nth-child(3){
+    border-top: none;
+    border-right: none;
+}
+.square:nth-child(4){
+    border-left: none;
+}
+.square:nth-child(6){
+    border-right: none;
+}
+.square:nth-child(7){
+    border-bottom: none;
+    border-left: none;
+}
+.square:nth-child(8){
+    border-bottom: none;
+}
+.square:nth-child(9){
+    border-bottom: none;
+    border-right: none;
+}
+.square .fa{
+    font-size: 6rem;
+}
+.square .fa-close{
+    color: #3587d6;
+}
+.square .fa-circle-o{
+    color: #3cbad8;
+}
+.bottompnl{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.bottompnl .circ{
+    width: 100px;
+    height: 45px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #aaaa;
+    cursor: pointer;
+    align-items: center;
+}
+.ic1, .ic2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: .3s;
+}
+.ic1{
+    color: #3587d6;
+}
+.ic2{
+    color: #3cbad8;
+}
+.circ.isx .ic1{
+    color: #fff;
+    background: #3587d6;
+}
+.circ.isi .ic2{
+    color: #fff;
+    background: #3cbad8;
+}

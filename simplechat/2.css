@@ -1,0 +1,200 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#35bf69,#03f5ff);
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    width: 330px;
+    height: 550px;
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(10px);
+    border-radius: 0px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+.phone{
+    position: relative;
+    width: 300px;
+    height: 580px;
+    border-radius: 35px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 5px 15px 5px;
+    box-shadow: 3px 10px 30px #0009;
+}
+.phone::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0px 0px 5px;
+    background: #000;
+    transform: translate(-4px,100px);
+}
+.phone::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 45px;
+    top: 0;
+    left: 0;
+    border-radius: 5px 0px 0px 5px;
+    background: #000;
+    transform: translate(-4px,220px);
+}
+.display{
+    position: relative;
+    width: 100%;
+    height: 98%;
+    background: #00ffff98;
+    border-radius: 5px 5px 10px 10px;
+    box-shadow: inset 2px 2px 5px #0007,
+    inset -2px -2px 5px #0004;
+    overflow: hidden;
+    border: 1px solid #999;
+}
+.nav{
+    position: relative;
+    top: 0;
+    background: #214b6d;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    padding: 20px;
+    justify-content: start;
+    align-items: center;
+}
+.nav .img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background: url(./photo_2021-04-30_22-18-42.jpg);
+    background-size: contain;
+    background-position: center 3px;
+    /* background: linear-gradient(135deg,rgb(0, 140, 255),rgba(255, 0, 179, 0.925)); */
+}
+.nav h2{
+    top: 3px;
+    position: relative;
+    margin-left: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #ddd;
+}
+.nav h2 span{
+    position: relative;
+    font-size: 0.8em;
+    color: lime;
+}
+#box{
+    position: relative;
+    top: 0;
+    background: url(./a0diRmVddg.jpg);
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 431px;
+    display: inline-block;
+    /* justify-content:flex-end; */
+    /* align-items: center; */
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 5px;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+.user{
+    position: relative;
+    padding:5px 20px 5px 20px;
+    font-size: 1em;
+    background: #03f337c2;
+    max-width: 150px;
+    color: #111;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 2px;
+    right: -127px;
+    transition: all 1s;
+    bottom: 0;
+}
+.answer span,
+.user span{
+    position: absolute;
+    font-size: 0.7em;
+    margin-top: 8px;
+    right: 3px;
+}
+.answer{
+    position: relative;
+    padding:5px 10px 5px 20px;
+    font-size: 1em;
+    background: #06b1f5e5;
+    max-width: 150px;
+    min-width: 100px;
+    color: #111;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 1s;
+    margin: 2px;
+    left: 2px;
+    bottom: 0px;
+}
+.type{
+    position: relative;
+    background: rgba(255,255,255,0);
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    border: none;
+    background: #214b6d;
+    padding: 20px;
+    font-size: 1em;
+    outline: none;
+    color: #eee;
+}
+::placeholder{
+    color: #fff;
+}
+button{
+    position: absolute;
+    left: 87%;
+    width: 36px;
+    height: 36px;
+    background: #00000033;
+    outline: none;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #eee;
+}
+button:hover{
+    background: rgba(0, 0, 0, 0.4);
+}

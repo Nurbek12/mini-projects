@@ -1,0 +1,311 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242555;
+}
+.wrapper{
+    position: relative;
+    width: 390px;
+    height: 520px;
+    background: #272a57;
+    padding: 15px;
+    box-shadow: 0 0 25px #0001;
+}
+.board{
+    position: relative;
+    width: 363px;
+    height: 363px;
+    padding: 3px;
+    gap: 3px;
+    background: #1e214d;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.squares{
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    gap: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.square{
+    width: 37px;
+    height: 37px;
+    background: #383a75;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    font-size: 2.3em;
+    font-weight: bold;
+    color: #fff;
+    user-select: none;
+}
+.square.blocked{
+    color: #888;
+}
+.board.y1 .square:nth-child(9n+1),
+.board.y2 .square:nth-child(9n+2),
+.board.y3 .square:nth-child(9n+3),
+.board.y4 .square:nth-child(9n+4),
+.board.y5 .square:nth-child(9n+5),
+.board.y6 .square:nth-child(9n+6),
+.board.y7 .square:nth-child(9n+7),
+.board.y8 .square:nth-child(9n+8),
+.board.y9 .square:nth-child(9n),
+.board.x1 .square:nth-child(-n + 9),
+
+
+.board.x2 .square:nth-child(10),
+.board.x2 .square:nth-child(11),
+.board.x2 .square:nth-child(12),
+.board.x2 .square:nth-child(13),
+.board.x2 .square:nth-child(14),
+.board.x2 .square:nth-child(15),
+.board.x2 .square:nth-child(16),
+.board.x2 .square:nth-child(17),
+.board.x2 .square:nth-child(18),
+
+.board.x3 .square:nth-child(19),
+.board.x3 .square:nth-child(20),
+.board.x3 .square:nth-child(21),
+.board.x3 .square:nth-child(22),
+.board.x3 .square:nth-child(23),
+.board.x3 .square:nth-child(24),
+.board.x3 .square:nth-child(25),
+.board.x3 .square:nth-child(26),
+.board.x3 .square:nth-child(27),
+
+.board.x4 .square:nth-child(28),
+.board.x4 .square:nth-child(29),
+.board.x4 .square:nth-child(30),
+.board.x4 .square:nth-child(31),
+.board.x4 .square:nth-child(32),
+.board.x4 .square:nth-child(33),
+.board.x4 .square:nth-child(34),
+.board.x4 .square:nth-child(35),
+.board.x4 .square:nth-child(36),
+
+.board.x5 .square:nth-child(37),
+.board.x5 .square:nth-child(38),
+.board.x5 .square:nth-child(39),
+.board.x5 .square:nth-child(40),
+.board.x5 .square:nth-child(41),
+.board.x5 .square:nth-child(42),
+.board.x5 .square:nth-child(43),
+.board.x5 .square:nth-child(44),
+.board.x5 .square:nth-child(45),
+
+.board.x6 .square:nth-child(46),
+.board.x6 .square:nth-child(47),
+.board.x6 .square:nth-child(48),
+.board.x6 .square:nth-child(49),
+.board.x6 .square:nth-child(50),
+.board.x6 .square:nth-child(51),
+.board.x6 .square:nth-child(52),
+.board.x6 .square:nth-child(53),
+.board.x6 .square:nth-child(54),
+
+.board.x7 .square:nth-child(55),
+.board.x7 .square:nth-child(56),
+.board.x7 .square:nth-child(57),
+.board.x7 .square:nth-child(58),
+.board.x7 .square:nth-child(59),
+.board.x7 .square:nth-child(60),
+.board.x7 .square:nth-child(61),
+.board.x7 .square:nth-child(62),
+.board.x7 .square:nth-child(63),
+
+.board.x8 .square:nth-child(64),
+.board.x8 .square:nth-child(65),
+.board.x8 .square:nth-child(66),
+.board.x8 .square:nth-child(67),
+.board.x8 .square:nth-child(68),
+.board.x8 .square:nth-child(69),
+.board.x8 .square:nth-child(70),
+.board.x8 .square:nth-child(71),
+.board.x8 .square:nth-child(72),
+
+.board.x9 .square:nth-child(73),
+.board.x9 .square:nth-child(74),
+.board.x9 .square:nth-child(75),
+.board.x9 .square:nth-child(76),
+.board.x9 .square:nth-child(77),
+.board.x9 .square:nth-child(78),
+.board.x9 .square:nth-child(79),
+.board.x9 .square:nth-child(80),
+.board.x9 .square:nth-child(81),
+
+
+.board.c1 .square:nth-child(1),
+.board.c1 .square:nth-child(2),
+.board.c1 .square:nth-child(3),
+.board.c1 .square:nth-child(10),
+.board.c1 .square:nth-child(11),
+.board.c1 .square:nth-child(12),
+.board.c1 .square:nth-child(19),
+.board.c1 .square:nth-child(20),
+.board.c1 .square:nth-child(21),
+
+.board.c2 .square:nth-child(4),
+.board.c2 .square:nth-child(5),
+.board.c2 .square:nth-child(6),
+.board.c2 .square:nth-child(13),
+.board.c2 .square:nth-child(14),
+.board.c2 .square:nth-child(15),
+.board.c2 .square:nth-child(22),
+.board.c2 .square:nth-child(23),
+.board.c2 .square:nth-child(24),
+
+.board.c3 .square:nth-child(7),
+.board.c3 .square:nth-child(8),
+.board.c3 .square:nth-child(9),
+.board.c3 .square:nth-child(16),
+.board.c3 .square:nth-child(17),
+.board.c3 .square:nth-child(18),
+.board.c3 .square:nth-child(25),
+.board.c3 .square:nth-child(26),
+.board.c3 .square:nth-child(27),
+
+.board.c4 .square:nth-child(28),
+.board.c4 .square:nth-child(29),
+.board.c4 .square:nth-child(30),
+.board.c4 .square:nth-child(37),
+.board.c4 .square:nth-child(38),
+.board.c4 .square:nth-child(39),
+.board.c4 .square:nth-child(46),
+.board.c4 .square:nth-child(47),
+.board.c4 .square:nth-child(48),
+
+.board.c5 .square:nth-child(31),
+.board.c5 .square:nth-child(32),
+.board.c5 .square:nth-child(33),
+.board.c5 .square:nth-child(40),
+.board.c5 .square:nth-child(41),
+.board.c5 .square:nth-child(42),
+.board.c5 .square:nth-child(49),
+.board.c5 .square:nth-child(50),
+.board.c5 .square:nth-child(51),
+
+.board.c6 .square:nth-child(34),
+.board.c6 .square:nth-child(35),
+.board.c6 .square:nth-child(36),
+.board.c6 .square:nth-child(43),
+.board.c6 .square:nth-child(44),
+.board.c6 .square:nth-child(45),
+.board.c6 .square:nth-child(52),
+.board.c6 .square:nth-child(53),
+.board.c6 .square:nth-child(54),
+
+.board.c7 .square:nth-child(55),
+.board.c7 .square:nth-child(56),
+.board.c7 .square:nth-child(57),
+.board.c7 .square:nth-child(64),
+.board.c7 .square:nth-child(65),
+.board.c7 .square:nth-child(66),
+.board.c7 .square:nth-child(73),
+.board.c7 .square:nth-child(74),
+.board.c7 .square:nth-child(75),
+
+.board.c8 .square:nth-child(58),
+.board.c8 .square:nth-child(59),
+.board.c8 .square:nth-child(60),
+.board.c8 .square:nth-child(67),
+.board.c8 .square:nth-child(68),
+.board.c8 .square:nth-child(69),
+.board.c8 .square:nth-child(76),
+.board.c8 .square:nth-child(77),
+.board.c8 .square:nth-child(78),
+
+.board.c9 .square:nth-child(61),
+.board.c9 .square:nth-child(62),
+.board.c9 .square:nth-child(63),
+.board.c9 .square:nth-child(70),
+.board.c9 .square:nth-child(71),
+.board.c9 .square:nth-child(72),
+.board.c9 .square:nth-child(79),
+.board.c9 .square:nth-child(80),
+.board.c9 .square:nth-child(81),
+
+.square:hover{
+    background: #5e60c2;
+    /* color: #bbb; */
+}
+
+.board.n1 .square.num1,
+.board.n2 .square.num2,
+.board.n3 .square.num3,
+.board.n4 .square.num4,
+.board.n5 .square.num5,
+.board.n6 .square.num6,
+.board.n7 .square.num7,
+.board.n8 .square.num8,
+.board.n9 .square.num9
+{
+    background: orange;
+    color: #fff;
+} 
+
+.square.danger{
+    background: red !important;
+    color: #fff;
+}
+.square.current{
+    background: #000 !important;
+}
+
+.btns{
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 27px;
+    gap: 5px;
+}
+.btns .btn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #5e60c2;
+    font-size: 2rem;
+    user-select: none;
+}
+.btns .btn:active{
+    background: orange;
+}
+.youwin{
+    position: absolute;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    width: 362px;
+    height: 362px;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 66;
+    background: #000b;
+}
+.time{
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}

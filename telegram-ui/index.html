@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Desktop</title>
+    <link rel="shortcut icon" href="./img/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/css/boxicons.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation-bar">
+            <div class="navigation-head">
+                <div class="user-img" onclick="toggleClasses(['.nav-drop-down .fa', '.setting-bar'],['down'])">
+                    <img src="./img/fake-user/42.jpg" alt="">
+                </div>
+                <div class="user-info">
+                    <div onclick="toggleClasses(['.nav-drop-down .fa', '.setting-bar'],['down'])">
+                        <h5>Nurbek</h5>
+                        <span>+998 96 432 12 22</span>
+                    </div>
+                    <div class="nav-drop-down" onclick="toggleClasses(['.nav-drop-down .fa', '.setting-bar'],['down'])">
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="setting-bar">
+                <div class="setting-link blue">
+                    <i class="fa fas fa-users"></i>
+                    <h5>Создать пруппу</h5>
+                </div>
+                <div class="setting-link orange">
+                    <i class="fa fa-bullhorn"></i>
+                    <h5>Создать канал</h5>
+                </div>
+                <div class="setting-link red">
+                    <i class="fa fa-user"></i>
+                    <h5>Контакты</h5>
+                </div>
+                <div class="setting-link green">
+                    <i class="fa fas fa-phone-alt"></i>
+                    <h5>Звонки</h5>
+                </div>
+                <div class="setting-link blue">
+                    <i class="fa fa-bookmark"></i>
+                    <h5>Избранное</h5>
+                </div>
+                <div class="setting-link purple">
+                    <i class="fa fa-cog"></i>
+                    <h5>Настройки</h5>
+                </div>
+                <div class="setting-link blue1" onclick="toggleClasses(['body', '.setting-link .checkbox'], ['light-theme', 'active'])">
+                    <i class="fa fa-moon"></i>
+                    <h5>Ночной режим</h5>
+                    <div class="checkbox active">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links">
+                <a href="https://telegram.org"><b>Telegram Desktop</b></a><br>
+                <a href="#">Версия 4.0.2 x64</a> <span>-</span> <a href="#">О программе</a>
+            </div>
+        </div>
+        <div class="navigation-bar-shadow" onclick="toggleClasses(['.navigation-bar', '.navigation-bar-shadow'], ['open', 'show'])"></div>
+        <div class="chat-list">
+            <div class="chat-list-head">
+                <div>
+                    <div class="btn" onclick="toggleClasses(['.navigation-bar', '.navigation-bar-shadow'], ['open', 'show'])">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                </div>
+                <input type="text" placeholder="Поиск">
+            </div>
+            <div class="chat-items">
+                <div class="user active">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/20.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">John doe</h4>
+                        <p class="chat-item-message">Salom</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge none"></div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <!-- <img src="./img/fake-user/17.jpg" class="chat-item-img"> -->
+                        <div class="noimg">N</div>
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+                <div class="user">
+                    <div class="imgbox">
+                        <img src="./img/fake-user/17.jpg" class="chat-item-img">
+                    </div>
+                    <div class="content">
+                        <h4 class="chat-item-name">Jumong</h4>
+                        <p class="chat-item-message">Qale</p>
+                    </div>
+                    <div class="chat-item-info">
+                        <div class="chat-item-info-time">14:56</div>
+                        <div class="chat-item-info-badge">2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="button-up">
+                <i class="fa fa-chevron-up"></i>
+            </div>
+        </div>
+        <div class="chat-box">
+            <div class="message-alert">Выберите, кому хотели бы написать</div>
+            <div class="chat-room">
+                <div class="chat-head">
+                    <div class="chat-head-name">
+                        <h5>Username</h5>
+                        <span>в сети</span>
+                    </div>
+                    <div>
+                        <i class="fa bx bx-search"></i>
+                        <i class="fa fa-ellipsis-v bx bx-dots-vertical"></i>
+                    </div>
+                </div>
+                <div class="chatbox">
+                    <div class="chat-messages">
+                        <div class="message-gruop-data">
+                            <div class="message alert">
+                                19 апрел
+                            </div>
+                            <div class="message out">
+                                <!-- <span class="name">nurik</span> -->
+                                <p>
+                                    Hello
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ad sapiente sit quasi autem necessitatibus rem assumenda ullam eveniet! Quod!
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ad sapiente sit quasi autem.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deserunt est accusamus corporis rerum dolorem eligendi, voluptatibus at sed cum labore quae ea suscipit ab perspiciatis laudantium iure. Cupiditate laborum ratione cumque ab voluptatem, laudantium quam consectetur autem odit eveniet!
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="message-gruop-data">
+                            <div class="message alert">
+                                20 апрел
+                            </div>
+                            <div class="message out">
+                                <!-- <span class="name">nurik</span> -->
+                                <p>
+                                    Hello
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deserunt est accusamus corporis rerum dolorem eligendi, voluptatibus at sed cum labore quae ea suscipit ab perspiciatis laudantium iure. Cupiditate laborum ratione cumque ab voluptatem, laudantium quam consectetur autem odit eveniet!
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="message-gruop-data">
+                            <div class="message alert">
+                                21 апрел
+                            </div>
+                            <div class="message out">
+                                <!-- <span class="name">nurik</span> -->
+                                <p>
+                                    Hello
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message out">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    <span>19:00</span>
+                                </p>
+                            </div>
+                            <div class="message me">
+                                <p>hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus deserunt est accusamus corporis rerum dolorem eligendi, voluptatibus at sed cum labore quae ea suscipit ab perspiciatis laudantium iure. Cupiditate laborum ratione cumque ab voluptatem, laudantium quam consectetur autem odit eveniet!
+                                    <span>21:00</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="upbtn"><i class="fa fa-chevron-down"></i></div>
+                <div class="chat-form">
+                    <div>
+                        <i class="fa bx bx-paperclip" style="transform: rotate(135deg);"></i>
+                    </div>
+                    <input autocomplete="cc-number" type="text" id="text" placeholder="Написать сообшение...">
+                    <div onclick="toggleClasses(['.smiles'], ['show'])">
+                        <i class="fa bx bx-smile"></i>
+                    </div>
+                    <div class="send-icons mic">
+                        <i class="fa fa-microphone-alt bx bx-microphone"></i>
+                        <i class="fa fa-paper-plane bx bxs-send"></i>
+                    </div>
+                    <div class="smiles"></div>
+                </div>
+            </div>
+        </div>
+        <form class="modal create-group" hidden>
+            <div class="input-group">
+                <label for="group-image" class="img-label">
+                    <input type="file" id="group-image" name="image" hidden>
+                    <i class="fa fa-camera"></i>
+                </label>
+                <div class="input-form">
+                    <!-- <span>Название группы</span> -->
+                    <input type="text" placeholder="Название группы">
+                </div>
+            </div>
+            <div class="btns">
+                <button class="out-button">Отмена</button>
+                <button class="out-button">Далее</button>
+            </div>
+        </form>
+        <div class="modal setting-card" hidden>
+            <div class="setting-card-head">
+                <span>Информатция</span>
+                <i class="bx bx-x"></i>
+            </div>
+            <div class="user-info-content">
+                <div class="imgbox">
+                    <img src="./img/fake-user/60_1.jpg">
+                    <label for="user-avatar-file">
+                        <i class="fa fa-camera"></i>
+                        <input type="file" id="user-avatar-file" hidden>
+                    </label>
+                </div>
+                <h5>Username</h5>
+                <span class="user-status online">в сети</span>
+            </div>
+            <input type="text" placeholder="О себе" data-numb="70">
+            <p class="help-text">Любые подробности, например: возраст, род занятий или город. Пример 23 года, дизайнер из Санкт-Петербурга.</p>
+            
+            <div class="setting-link blue">
+                <i class="fa fa-user"></i>
+                <h5>Имя</h5>
+            </div>
+            <div class="setting-link green">
+                <i class="fa fa-phone-alt"></i>
+                <h5>Номер телефона</h5>
+            </div>
+            <div class="setting-link orange">
+                <i class="fa fa-">@</i>
+                <h5>Имя пользователя</h5>
+            </div>
+            <div class="help-text empty"></div>
+        </div>
+        <div class="login"  style="display: none;">
+            <div class="login-head">
+                <i class="fa fa-arrow-left"></i>
+                <div class="out-button">Настройки</div>
+            </div>
+            <div class="content">
+                <div class="wrapper" style="display: none;">
+                    <h3 class="title">Ваш электронная почта</h3>
+                    <p class="lead-text">Проверьте код страны и введите свой электронная посту.</p>
+                    <input type="email" class="login-input" placeholder="example@domain.com">
+                    <button class="login-btn">Продолжить</button>
+                </div>
+                <div class="wrapper" style="display: none;">
+                    <h3 class="title">example@domain.com</h3>
+                    <p class="lead-text">Если Вы используете это почту, код отправлен через Gmail.</p>
+                    <label class="title">Код</label>
+                    <input type="text" class="login-input" placeholder="-----" max="5">
+                    <button class="login-btn" @click="Login()">Продолжить</button>
+                </div>
+            </div>
+        </div>
+        <div class="login"  style="display: none;">
+            <div class="login-head">
+                <i class="fa fa-arrow-left"></i>
+                <div class="out-button">Настройки</div>
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <h3 class="title">Введите Ваше имя</h3>
+                    <p class="lead-text">Назовите свою учетную запись, потому что учетная запись, которую вы открыли, является новой</p>
+                    <label>Имя и Фамилия</label>
+                    <input type="text" class="login-input" placeholder="Имя и Фамилия">
+                    <button class="login-btn">Продолжить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        const smiles = [
+    '😀','😃','😄','😁','😆','😅','😂','😊','😇',
+    '🙂','🙃','😉','😌','😍','🥰','😘','😗','😙',
+    '😚','😋','😛','😝','😜','🤪','🤨','🧐','🤓',
+    '😎','🤩','🥳','😏','😒','😞','😔','😟','😕',
+    '🙁','☹️','😣','😖','😫','😩','🥺','😢','😭',
+    '😤','😠','😡','🤬','🤯','😳','🥵','🥶','😶',
+    '😱','😨','😰','😥','😓','🤗','🤔','🤭','🤫',
+    '🤥','😶','😐','😑','😬','🙄','😯','😦','😧',
+    '😮','😲','🥱','😴','🤤','😪','😮','😵','😵',
+    '🤐','🥴','🤢','🤮','🤧','😷','🤒','🤕','🤑',
+    '🤠','😈','👿','👹','👺','🤡','💩','👻','💀',
+    '☠️','👽','👾','🤖','🎃','😺','😸','😹','😻',
+    '😼','😽','🙀','😿','😾','🤲','👐','🙌','👏',
+    '🤝','👍','👎','👊','✊','🤛','🤜','🤞','✌️',
+    '🤟','🤘','👌','🤏','👈','👉','👆','👇','☝️','✋',
+    '🤚','🖐','🖖','👋','🤙','💪','🦾','🖕','✍️','🙏',
+    '🦶','🦵','🦿','💄','💋','👄','🦷','👅','👂','🦻','👃',
+    '👣','👀','👤','👥','👶','👧','🧒','👦','👩','🧑','👨',
+    '👩‍🦱','🧑','👨‍🦱','👩‍🦰','🧑','👦','👱‍♀️','👱','👱‍♂️','👩‍🦳','🧑',
+    '👨‍🦳','👩‍🦲','🧑','👨‍🦲','🧔','🧔','🧔','👵','👴','👲','👳‍♀️',
+    '👳','👳‍♂️','🧕','👮‍♀️','👮','👮‍♂️','👷‍♀️','💂‍♀️','🕵️‍♀️','👩‍⚕️','🧑',
+    '🧶','🧵','🧥','🥼','🦺','👚','👕','👖','🩲','🩳','👔',
+    '👗','👙','🩱','👘','🥻','🥿','👠','👡','👢',
+    '👞','👟','🥾','🧦','🧤','🧣','🎩','🧢','👒','🎓','🥽','🌂',
+]
+        
+        function toggleClasses(a,b){
+            a.forEach((el, i) => {
+                $(el).toggleClass(b.length === 1 ? b[0] : b[i]);
+            });
+        }
+        
+        $('.chat-items').scroll((e) => {
+            if(e.target.scrollTop > 300){
+                $('.chat-list .button-up').addClass('up');
+            }else{
+                $('.chat-list .button-up').removeClass('up');
+            }
+        });
+
+        smiles.forEach(sm => $('.smiles').append(`<div class="smile">${sm}</div>`))
+        
+        $('.chatbox').scroll((e) => {
+            // console.log(e.target.scrollTop ,e.target.scrollHeight);
+            if(e.target.scrollHeight - e.target.scrollTop > 900){
+                $('.chat-room .upbtn').addClass('up');
+            }else{
+                $('.chat-room .upbtn').removeClass('up');
+            }
+        });
+
+        $('#text').on('input', (e) => {
+            const text = e.target.value;
+            if(text === ''){
+                $('.send-icons').addClass('mic');
+                $('.send-icons').removeClass('send');
+            }else{
+                $('.send-icons').removeClass('mic');
+                $('.send-icons').addClass('send');
+            }
+        });
+    </script>
+</body>
+</html>

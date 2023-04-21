@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    padding-top: 40px;
+}
+.hand{
+    position: relative;
+    width: 150px;
+    margin: 5px 10px;
+    height: 150px;
+    cursor: pointer;
+    filter: invert(1);
+}
+.hand.active{
+    filter: brightness(140%);
+}
+.comp::after,
+.user::after{
+    top: 5px;
+    position: absolute;
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+}
+.user::after{
+    content: 'User Choice';
+}
+.comp::after{
+    content: 'Computer Choice';
+}
+.container h1{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.rock{
+    background: url('./img/cut-outline.svg');
+    background-size: cover;
+    background-position: center;
+}
+.paper{
+    background: url('./img/receipt-outline.svg');
+    background-position: center;
+    background-size: cover;
+}
+.scissor{
+    background: url('./img/bowling-ball-outline.svg');
+    background-position: center;
+    background-size: cover;
+}
+.resulst{
+    position: absolute;
+    top: 30px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 25px;
+}
+.resulst span{
+    position: relative;
+    margin: 0 10px;
+}
+.resulst::after,
+.resulst::before{
+    position: absolute;
+    background: #f00;
+    padding: 5px 10px;
+}
+.resulst::after{
+    content: 'Computer';
+    left: 50%;
+    transform: translateX(35%);
+}
+.resulst::before{
+    left: -50%;
+    transform: translateX(20%);
+    content: 'User';
+}
